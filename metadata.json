@@ -1,0 +1,6 @@
+{
+  "name": "Forgevox Studio",
+  "description": "Professionally designed websites for HVAC, Roofing, and Electrical businesses, delivered within 48 hours of completed onboarding.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

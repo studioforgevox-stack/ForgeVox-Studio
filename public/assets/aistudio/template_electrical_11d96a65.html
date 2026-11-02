@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Electrical Services | Full-Service Local Electrician</title>
+  <meta name="description" content="Top-rated local residential electricians. Fully licensed and insured with a 100% satisfaction guarantee. Panel upgrades, EV chargers, generators, and 24/7 emergency repairs." />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0B192C',
+              navy: '#1E3E62',
+              amber: '#FF6500',
+              gold: '#F59E0B',
+              light: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-amber selection:text-white">
+
+  <!-- Top Emergency & Utility Bar -->
+  <div class="bg-brand-dark text-white text-xs sm:text-sm py-2.5 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-medium">24/7 Emergency Electrical Service Available Across the Region</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="hidden md:inline text-slate-300">Fully Licensed & Insured • Master Electricians</span>
+        <a href="tel:8005550199" class="font-bold text-brand-gold hover:underline flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          (800) 555-0199
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-lg bg-brand-dark flex items-center justify-center text-brand-gold shadow-md group-hover:bg-brand-amber group-hover:text-white transition-colors">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-brand-dark block leading-none">APEX</span>
+          <span class="text-xs font-semibold tracking-widest uppercase text-slate-500">Electrical Services</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+        <a href="#services" class="hover:text-brand-amber transition-colors">Services</a>
+        <a href="#amenities" class="hover:text-brand-amber transition-colors">Home Upgrades</a>
+        <a href="#about" class="hover:text-brand-amber transition-colors">Our Values</a>
+        <a href="#reviews" class="hover:text-brand-amber transition-colors">Reviews</a>
+        <a href="#faq" class="hover:text-brand-amber transition-colors">FAQs</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="tel:8005550199" class="px-4 py-2.5 rounded-lg border-2 border-brand-dark text-brand-dark font-bold text-sm hover:bg-brand-dark hover:text-white transition-colors">
+          Call (800) 555-0199
+        </a>
+        <a href="#schedule" class="px-5 py-2.5 rounded-lg bg-brand-amber text-white font-bold text-sm shadow-md hover:bg-orange-600 transition-all">
+          Schedule Appointment
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+      <a href="#services" class="block py-2 font-semibold text-slate-700 border-b border-slate-100">Services</a>
+      <a href="#amenities" class="block py-2 font-semibold text-slate-700 border-b border-slate-100">Home Upgrades</a>
+      <a href="#about" class="block py-2 font-semibold text-slate-700 border-b border-slate-100">Our Values</a>
+      <a href="#reviews" class="block py-2 font-semibold text-slate-700 border-b border-slate-100">Reviews</a>
+      <a href="#faq" class="block py-2 font-semibold text-slate-700">FAQs</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="tel:8005550199" class="w-full text-center py-3 rounded-lg border-2 border-brand-dark font-bold text-brand-dark">Call Now: (800) 555-0199</a>
+        <a href="#schedule" class="w-full text-center py-3 rounded-lg bg-brand-amber font-bold text-white">Schedule Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-brand-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-15 pointer-events-none">
+      <img 
+        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=70" 
+        alt="Electrical circuitry background" 
+        class="w-full h-full object-cover"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-navy/80 pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Hero Copy & Image Showcase -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/40 text-brand-gold text-xs font-bold uppercase tracking-wider">
+          ★★★★★ Top-Rated Local Electrician Near You
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+          Your Trusted, Local, <span class="text-brand-gold">Home Electricians.</span>
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+          From 24/7 emergency electrical repairs and 200A panel upgrades to EV chargers and whole-home standby generators, Apex Electrical Services provides licensed, code-compliant craftsmanship backed by our 100% money-back guarantee.
+        </p>
+
+        <!-- Hero Technician Image Showcase -->
+        <div class="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl max-w-xl group">
+          <img 
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" 
+            alt="Licensed Electrician working on residential electrical equipment" 
+            class="w-full h-56 sm:h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent"></div>
+          
+          <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 bg-brand-dark/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="font-bold text-white">Master Electricians on Call</span>
+            </div>
+            <span class="text-xs font-semibold text-brand-gold bg-black/60 backdrop-blur-md px-2.5 py-1 rounded">No Extra After-Hours Fee</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+          <a href="#schedule" class="px-7 py-3.5 rounded-xl bg-brand-amber hover:bg-orange-600 text-white font-bold text-base text-center shadow-lg shadow-orange-600/30 transition-all">
+            Schedule an Appointment
+          </a>
+          <a href="tel:8005550199" class="px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-base text-center backdrop-blur-sm transition-all flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            Call Us Now: (800) 555-0199
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Lead Capture Form -->
+      <div class="lg:col-span-5" id="schedule">
+        <div class="bg-white text-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 border border-slate-100">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-extrabold text-brand-dark">Get a Fast Estimate</h2>
+            <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">Fast 15-Min Reply</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-6">Connect directly with our dispatch team for an upfront, flat-rate quote or emergency inspection.</p>
+          
+          <form id="lead-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Full Name *</label>
+              <input type="text" required placeholder="John Carter" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none text-sm" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Phone Number *</label>
+                <input type="tel" required placeholder="(555) 234-5678" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Postal Code *</label>
+                <input type="text" required placeholder="NW1 6XE" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none text-sm" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Service Needed *</label>
+              <select required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none text-sm bg-white">
+                <option value="">Select a service...</option>
+                <option>200A Panel Upgrade / Consumer Unit</option>
+                <option>EV Charger Installation</option>
+                <option>Whole-Home Generator Installation</option>
+                <option>Outlet / Switch Repair & Installation</option>
+                <option>24/7 Emergency Electrical Issue</option>
+                <option>Lighting / Hot Tub / Home Amenities</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Project Details</label>
+              <textarea rows="2" placeholder="Briefly describe your electrical issue or project..." class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-amber focus:border-brand-amber outline-none text-sm"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-amber hover:bg-orange-600 text-white font-extrabold text-base shadow-md transition-all">
+              Request My Free Estimate
+            </button>
+            <p id="form-feedback" class="hidden text-center text-sm font-semibold text-emerald-600 pt-2">
+              ✓ Request received! Our dispatch technician will contact you shortly.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges Strip -->
+  <section class="relative z-10 -mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-xl bg-brand-navy/10 text-brand-navy flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-brand-dark text-lg">Fully Licensed and Insured</h3>
+          <p class="text-sm text-slate-600 mt-1">Certified master electricians with state licensure and full multi-million liability coverage.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-xl bg-brand-amber/10 text-brand-amber flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-brand-dark text-lg">100% Satisfaction Guarantee</h3>
+          <p class="text-sm text-slate-600 mt-1">If you aren't completely happy with our craftsmanship, we will make it right or refund your service.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-lg border border-slate-100 flex items-start gap-4">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-brand-dark text-lg">Reliable & Dependable Service</h3>
+          <p class="text-sm text-slate-600 mt-1">On-time arrival, upfront pricing with no surprise add-ons, and code-guaranteed results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Electrical Services -->
+  <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-brand-amber">Residential Electrical Solutions</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">Expert Electrical Services Near You</h2>
+      <p class="text-slate-600 mt-3 text-base sm:text-lg">Reliable residential electrical installations and repairs executed to the highest standards.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-200 flex flex-col">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80" alt="Electrical Panel Upgrade" loading="lazy" class="h-48 w-full object-cover" />
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-amber uppercase">Lifetime Guarantee</span>
+            <h3 class="text-xl font-extrabold text-brand-dark mt-1">200A Panel Upgrades & Heavy-Ups</h3>
+            <p class="text-sm text-slate-600 mt-2">Upgrade obsolete fuse boxes or crowded panels to safe 200A service capable of powering all modern appliances.</p>
+          </div>
+          <a href="#schedule" class="mt-5 inline-flex items-center text-sm font-bold text-brand-navy hover:text-brand-amber">Schedule Panel Estimate →</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-200 flex flex-col">
+        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=700&q=80" alt="EV Charger Installation" loading="lazy" class="h-48 w-full object-cover" />
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-amber uppercase">Fast Level 2 Charging</span>
+            <h3 class="text-xl font-extrabold text-brand-dark mt-1">EV Charger Installation</h3>
+            <p class="text-sm text-slate-600 mt-2">Fast, safe home charging for Tesla, Emporia, ChargePoint, and universal EVs with dedicated high-amperage breakers.</p>
+          </div>
+          <a href="#schedule" class="mt-5 inline-flex items-center text-sm font-bold text-brand-navy hover:text-brand-amber">Get EV Charger Quote →</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-200 flex flex-col">
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=700&q=80" alt="24/7 Emergency Repairs" loading="lazy" class="h-48 w-full object-cover" />
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-red-600 uppercase">Rapid 24/7 Dispatch</span>
+            <h3 class="text-xl font-extrabold text-brand-dark mt-1">Emergency Electrical Repairs</h3>
+            <p class="text-sm text-slate-600 mt-2">Storm damage, burning smells, buzzing breakers, or dead circuits. Our after-hours response vans arrive prepared to fix issues immediately.</p>
+          </div>
+          <a href="tel:8005550199" class="mt-5 inline-flex items-center text-sm font-bold text-red-600 hover:underline">Call 24/7 Dispatch Now →</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-200 flex flex-col">
+        <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=700&q=80" alt="Outlet and Switch Installation" loading="lazy" class="h-48 w-full object-cover" />
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-amber uppercase">Safety & Convenience</span>
+            <h3 class="text-xl font-extrabold text-brand-dark mt-1">Outlets, Switches & RCDs</h3>
+            <p class="text-sm text-slate-600 mt-2">Replace dangerous ungrounded outlets, install kitchen and bath GFCI/RCD protection, and add USB charging receptacles anywhere in your home.</p>
+          </div>
+          <a href="#schedule" class="mt-5 inline-flex items-center text-sm font-bold text-brand-navy hover:text-brand-amber">Book Outlet Service →</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-200 flex flex-col">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=80" alt="Lighting Upgrades" loading="lazy" class="h-48 w-full object-cover" />
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-amber uppercase">Modern Illumination</span>
+            <h3 class="text-xl font-extrabold text-brand-dark mt-1">Recessed & Accent Lighting</h3>
+            <p class="text-sm text-slate-600 mt-2">Illuminate living spaces with ultra-thin wafer recessed LEDs, chandelier and pendant wiring, and exterior security spotlights.</p>
+          </div>
+          <a href="#schedule" class="mt-5 inline-flex items-center text-sm font-bold text-brand-navy hover:text-brand-amber">Upgrade Your Lighting →</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-200 flex flex-col">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=700&q=80" alt="Generators and Surge Protection" loading="lazy" class="h-48 w-full object-cover" />
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-amber uppercase">Storm Readiness</span>
+            <h3 class="text-xl font-extrabold text-brand-dark mt-1">Generators & Surge Protection</h3>
+            <p class="text-sm text-slate-600 mt-2">Whole-home standby generators, manual generator interlock switches, and surge protective devices to safeguard expensive home electronics.</p>
+          </div>
+          <a href="#schedule" class="mt-5 inline-flex items-center text-sm font-bold text-brand-navy hover:text-brand-amber">Protect Your Home →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Home Amenities & Upgrades -->
+  <section id="amenities" class="bg-brand-dark text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-gold">Home Amenities & Lifestyle Upgrades</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Discover How We Can Upgrade Your Home</h2>
+        </div>
+        <p class="text-slate-300 text-sm sm:text-base max-w-md">
+          From backyard leisure circuits to smart home automation, we install high-demand residential amenities with clean, invisible wiring.
+        </p>
+      </div>
+
+      <!-- Amenity Image Cards Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Hot Tub & Spa -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-gold hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+          <div class="relative h-44 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=80" 
+              alt="Outdoor hot tub and luxury spa patio" 
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+            <span class="absolute top-3 right-3 bg-brand-dark/80 backdrop-blur-md text-brand-gold text-xs font-bold px-2.5 py-1 rounded">50A/60A Protection</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-extrabold text-white text-lg">Jacuzzi, Spa & Hot Tub Wiring</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Dedicated sub-panels, emergency rotary isolators, and underground conduit trenching installed strictly to local pool & spa electrical regulations.
+              </p>
+            </div>
+            <a href="#schedule" class="mt-4 text-xs font-bold text-brand-gold hover:underline inline-flex items-center gap-1">
+              Request Spa Wiring Quote →
+            </a>
+          </div>
+        </div>
+
+        <!-- Bathroom Ventilation -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-gold hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+          <div class="relative h-44 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=700&q=80" 
+              alt="Modern bathroom exhaust fan and luxury shower" 
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+            <span class="absolute top-3 right-3 bg-brand-dark/80 backdrop-blur-md text-emerald-400 text-xs font-bold px-2.5 py-1 rounded">Moisture Sensor</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-extrabold text-white text-lg">Exhaust Fan Installation</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Quiet, high-airflow ventilation fans with integrated humidity sensors, nightlights, and exterior roof or soffit duct termination to prevent mold.
+              </p>
+            </div>
+            <a href="#schedule" class="mt-4 text-xs font-bold text-brand-gold hover:underline inline-flex items-center gap-1">
+              Book Fan Replacement →
+            </a>
+          </div>
+        </div>
+
+        <!-- TV Wall Mounting -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-gold hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+          <div class="relative h-44 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=700&q=80" 
+              alt="Wall mounted television with zero visible wires" 
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+            <span class="absolute top-3 right-3 bg-brand-dark/80 backdrop-blur-md text-sky-400 text-xs font-bold px-2.5 py-1 rounded">Zero Visible Wires</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-extrabold text-white text-lg">TV Mounting & Concealed Power</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Heavy-duty stud wall bracket anchoring, recessed duplex socket installation behind the screen, and in-wall low-voltage cable routing for HDMI.
+              </p>
+            </div>
+            <a href="#schedule" class="mt-4 text-xs font-bold text-brand-gold hover:underline inline-flex items-center gap-1">
+              Schedule TV Mounting →
+            </a>
+          </div>
+        </div>
+
+        <!-- Smart Home & Video Doorbell -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-gold hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+          <div class="relative h-44 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=700&q=80" 
+              alt="Smart home video doorbell and entry security" 
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+            <span class="absolute top-3 right-3 bg-brand-dark/80 backdrop-blur-md text-amber-400 text-xs font-bold px-2.5 py-1 rounded">Smart Security</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-extrabold text-white text-lg">Smart Doorbells & Cameras</h3>
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                Hardwired transformer upgrades for Nest & Ring doorbells, exterior smart floodlight installation, and integrated security system circuits.
+              </p>
+            </div>
+            <a href="#schedule" class="mt-4 text-xs font-bold text-brand-gold hover:underline inline-flex items-center gap-1">
+              Install Smart Device →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Multi-Image Visual Mosaic -->
+      <div class="lg:col-span-6 space-y-4">
+        
+        <!-- Large Main About Image -->
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 group">
+          <img 
+            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80" 
+            alt="Master Electrician performing electrical diagnosis" 
+            loading="lazy"
+            class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500" 
+          />
+          <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-brand-dark/90 p-5 text-white">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-gold">Family Owned & Operated</span>
+            <p class="text-base font-bold mt-0.5">Founded by a 3rd-Generation Master Electrician</p>
+          </div>
+        </div>
+
+        <!-- 2-Column Supporting Images -->
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Code-Strict Wiring Image -->
+          <div class="relative rounded-xl overflow-hidden shadow-md border border-slate-200 group h-40">
+            <img 
+              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" 
+              alt="Electrician hands stripping and organizing electrical wires" 
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+            <div class="absolute inset-0 bg-brand-dark/30"></div>
+            <span class="absolute bottom-2 left-2 text-[11px] font-bold text-white bg-brand-dark/80 px-2 py-0.5 rounded">
+              Code-Strict Wiring
+            </span>
+          </div>
+
+          <!-- 100% Guaranteed Image -->
+          <div class="relative rounded-xl overflow-hidden shadow-md border border-slate-200 group h-40">
+            <img 
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" 
+              alt="Satisfied homeowner shaking hands with electrical technician" 
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+            <div class="absolute inset-0 bg-brand-dark/30"></div>
+            <span class="absolute bottom-2 left-2 text-[11px] font-bold text-white bg-brand-dark/80 px-2 py-0.5 rounded">
+              100% Guaranteed
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- About Copy & Pillars -->
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-amber">About Apex Electrical Services</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Built on Three Generations of Craftsmanship & Integrity</h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+          Founded by a third-generation electrician, we are dedicated to delivering top-tier residential electrical solutions throughout the region. We don't cut corners behind drywall or leave loose ends inside panel boxes. Every job is guided by our core company values:
+        </p>
+
+        <div class="space-y-4 pt-2">
+          <div class="p-4 rounded-xl bg-white shadow-sm border border-slate-200">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-brand-amber/15 text-brand-amber flex items-center justify-center font-bold text-xs">1</span>
+              <h3 class="font-extrabold text-brand-dark text-base">Unwavering Reliability</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 pl-8">
+              We arrive promptly, maintain clean work areas with shoe covers and drop cloths, and overdeliver on safety and reliability when your home needs it most.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white shadow-sm border border-slate-200">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-brand-amber/15 text-brand-amber flex items-center justify-center font-bold text-xs">2</span>
+              <h3 class="font-extrabold text-brand-dark text-base">A Serving Heart</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 pl-8">
+              We guide homeowners transparently through their choices without high-pressure sales tactics. We engineer solutions that keep your home safe for decades.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white shadow-sm border border-slate-200">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-brand-amber/15 text-brand-amber flex items-center justify-center font-bold text-xs">3</span>
+              <h3 class="font-extrabold text-brand-dark text-base">Competitive Greatness</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 pl-8">
+              True craftsmanship shows in the details no one else sees. Every breaker label, torque screw, and junction box connection is completed to code perfection.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="reviews" class="bg-slate-100 py-20 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-amber">5.0 ★ Customer Rated</span>
+        <h2 class="text-3xl font-extrabold text-brand-dark mt-2">What Your Neighbors Are Saying</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="text-brand-gold text-lg">★★★★★</div>
+            <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+              "We decided to modernize our home to accommodate a 200A service with a sub-panel and an Emporia EV charger. Splendid experience, clean conduit runs, and straightforward flat pricing!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="font-bold text-sm text-brand-dark">Austin S.</span>
+            <span class="text-xs text-slate-500">200A Heavy-Up & EV Charger</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="text-brand-gold text-lg">★★★★★</div>
+            <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+              "Called at 8 PM when half our panel started buzzing after a severe thunderstorm. A technician answered immediately, dispatched a master electrician, and restored power safely before midnight."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="font-bold text-sm text-brand-dark">Rebecca M.</span>
+            <span class="text-xs text-slate-500">Emergency Repair Call</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="text-brand-gold text-lg">★★★★★</div>
+            <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+              "Impeccable quality. They installed 14 recessed LED wafer lights, routed our backyard hot tub hookup, and left our rooms cleaner than when they started."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="font-bold text-sm text-brand-dark">David & Sarah K.</span>
+            <span class="text-xs text-slate-500">Recessed Lighting & Spa Hookup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-brand-amber">Got Questions?</span>
+      <h2 class="text-3xl font-extrabold text-brand-dark mt-2">Frequently Asked Electrical Questions</h2>
+    </div>
+
+    <div class="space-y-4">
+      <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-sm" open>
+        <summary class="font-bold text-brand-dark cursor-pointer list-none flex items-center justify-between">
+          <span>How can I improve the safety of my home's electrical system?</span>
+          <span class="text-brand-amber group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+          Safety starts with regular inspections, whole-home surge protection, upgrading obsolete fuse panels to modern 200A breaker systems, and making sure all wet areas (kitchens, bathrooms, exteriors) are equipped with GFCI/RCD protection.
+        </p>
+      </details>
+
+      <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+        <summary class="font-bold text-brand-dark cursor-pointer list-none flex items-center justify-between">
+          <span>What is the typical cost for residential electrical repairs?</span>
+          <span class="text-brand-amber group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+          Costs vary depending on accessibility, parts, and whether dedicated circuits are needed. We provide transparent upfront quotes with zero hidden fees before starting any work.
+        </p>
+      </details>
+
+      <details class="group bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+        <summary class="font-bold text-brand-dark cursor-pointer list-none flex items-center justify-between">
+          <span>Do you offer a warranty on electrical panel replacements?</span>
+          <span class="text-brand-amber group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+          Yes. In addition to our 100% Money-Back Satisfaction Guarantee, we provide an industry-leading lifetime workmanship warranty on all main breaker panel replacements and service upgrades.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-slate-400 py-14 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2 text-white font-extrabold text-xl mb-3">
+          <span class="text-brand-gold">⚡</span> APEX ELECTRICAL
+        </div>
+        <p class="text-sm leading-relaxed">
+          Licensed, insured, and dependable residential electricians delivering high-performance electrical solutions across the region with 24/7 emergency dispatch.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Services</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#services" class="hover:text-white">200A Panel Upgrades</a></li>
+          <li><a href="#services" class="hover:text-white">EV Charger Installation</a></li>
+          <li><a href="#services" class="hover:text-white">24/7 Emergency Repairs</a></li>
+          <li><a href="#amenities" class="hover:text-white">Hot Tub & Spa Wiring</a></li>
+          <li><a href="#services" class="hover:text-white">Generators & Surge Protection</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Service Areas</h4>
+        <ul class="space-y-2 text-sm">
+          <li>Central & Metro Region</li>
+          <li>Greater Suburban Districts</li>
+          <li>Surrounding Towns & Communities</li>
+          <li>24/7 Emergency Response Units</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Contact Dispatch</h4>
+        <p class="text-sm mb-2">Phone: <a href="tel:8005550199" class="text-brand-gold font-bold">(800) 555-0199</a></p>
+        <p class="text-sm mb-4">Email: dispatch@apexelectrical.com</p>
+        <a href="#schedule" class="inline-block px-5 py-2.5 rounded-lg bg-brand-amber text-white font-bold text-xs uppercase tracking-wider hover:bg-orange-600 transition-all">
+          Book Online Now
+        </a>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-8 border-t border-slate-800 text-xs flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2026 Apex Electrical Services LLC. All Rights Reserved. Fully Licensed & Insured.</p>
+      <p>100% Money-Back Satisfaction Guarantee</p>
+    </div>
+  </footer>
+
+  <!-- Vanilla JS for Menu & Form Handling -->
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    const leadForm = document.getElementById('lead-form');
+    const feedback = document.getElementById('form-feedback');
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      feedback.classList.remove('hidden');
+      leadForm.reset();
+    });
+  </script>
+</body>
+</html>

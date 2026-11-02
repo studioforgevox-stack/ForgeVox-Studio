@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-bind="pageTitle">Goettl Air Conditioning &amp; Plumbing | Austin, TX 24/7 HVAC &amp; Plumbing Service</title>
+
+  <!-- Google Fonts: Montserrat (800/900 Heritage Display) + Inter (Clean Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            goettl: {
+              red: '#C8102E',
+              crimson: '#D31145',
+              darkRed: '#9E0B22',
+              softRed: '#FDF2F4',
+              charcoal: '#141414',
+              graphite: '#1E1E1E',
+              stone: '#F5F5F7',
+              ash: '#EFEFEF',
+              gold: '#F59E0B'
+            }
+          },
+          fontFamily: {
+            display: ['"Montserrat"', 'sans-serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+          },
+          boxShadow: {
+            'card': '0 10px 30px -5px rgba(20, 20, 20, 0.07), 0 4px 12px -2px rgba(20, 20, 20, 0.04)',
+            'crimson': '0 12px 28px -6px rgba(200, 16, 46, 0.38)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       GOETTL 1:1 BRAND STYLING & CUSTOM COMPONENTS
+       Strictly Crimson (#C8102E / #D31145), Charcoal (#141414), Stone (#F5F5F7) & White
+       ========================================================================== */
+    body {
+      background-color: #FFFFFF;
+      color: #141414;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Goettl Dashed Coupon Card Border */
+    .coupon-dashed {
+      border: 2px dashed #C8102E;
+      position: relative;
+    }
+
+    /* Subtle Industrial Grid Pattern for Dark Sections */
+    .bg-charcoal-mesh {
+      background-color: #141414;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Custom Range Slider for GoodLeap Financing Calculator */
+    input[type=range].finance-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      background: #E5E7EB;
+      border-radius: 999px;
+      outline: none;
+    }
+    input[type=range].finance-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #C8102E;
+      border: 3px solid #FFFFFF;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(200, 16, 46, 0.45);
+      transition: transform 0.15s ease;
+    }
+    input[type=range].finance-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+  </style>
+</head>
+<body class="bg-white text-goettl-charcoal antialiased selection:bg-goettl-red selection:text-white pb-20 lg:pb-0">
+
+  <!-- ========================================================================
+       1. TOP UTILITY & LOCATION BAR (Goettl Austin 1:1)
+       ======================================================================== -->
+  <div class="bg-goettl-charcoal text-white border-b border-white/10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Left: Location Indicator Pill + Heritage Motto -->
+      <div class="flex flex-wrap items-center gap-3 sm:gap-5">
+        <a href="#service-areas" class="inline-flex items-center gap-1.5 bg-goettl-graphite hover:bg-white/15 border border-white/15 px-3 py-1 rounded-full font-semibold text-white transition-colors">
+          <span class="text-goettl-crimson">📍</span>
+          <span>Serving <strong data-bind="city">Austin, TX</strong> &amp; <span data-bind="region">Surrounding Hill Country</span></span>
+          <span class="text-[10px] opacity-70">▼</span>
+        </a>
+        <span class="hidden xl:inline-block text-white/80 font-medium italic">
+          “We’ll Do Things The Right Way, Not The Easy Way®”
+        </span>
+      </div>
+
+      <!-- Right: 24/7 Live Status + Utility Links + Phone -->
+      <div class="flex items-center gap-4 sm:gap-6 ml-auto">
+        <div class="flex items-center gap-2 font-bold text-white">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>We’re Here 24/7!</span>
+        </div>
+        <a href="#financing" class="hidden md:inline-block text-white/80 hover:text-white font-medium transition-colors">Financing</a>
+        <a href="#promos" class="hidden md:inline-block text-white/80 hover:text-white font-medium transition-colors">Special Offers</a>
+        <a href="tel:5122537075" data-bind-href="phoneTel" class="bg-goettl-red hover:bg-goettl-crimson text-white font-display font-extrabold tracking-wide px-3.5 py-1 rounded text-xs transition-colors">
+          <span data-bind="phone">(512) 253-7075</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. MAIN STICKY NAVIGATION HEADER
+       ======================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Left: Goettl Heritage Crest Shield + Dynamic Brand Wordmark -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-11 h-11 rounded-lg bg-goettl-red flex items-center justify-center text-white shadow-sm group-hover:bg-goettl-darkRed transition-colors shrink-0">
+          <!-- Heritage Shield Emblem SVG -->
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1.06 13.54L7.4 12l1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="block font-display font-black text-2xl sm:text-3xl tracking-tight text-goettl-charcoal uppercase leading-none" data-bind="companyName">GOETTL</span>
+          <span class="block text-[10px] font-display font-bold uppercase tracking-widest text-goettl-red mt-0.5">
+            AIR CONDITIONING &amp; PLUMBING · EST. <span data-bind="since">1939</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Center: Primary Navigation Links -->
+      <nav class="hidden xl:flex items-center gap-6 text-sm font-bold text-goettl-charcoal">
+        <a href="#services" onclick="switchServiceTab('ac')" class="hover:text-goettl-red transition-colors">Air Conditioning</a>
+        <a href="#services" onclick="switchServiceTab('heating')" class="hover:text-goettl-red transition-colors">Heating</a>
+        <a href="#services" onclick="switchServiceTab('plumbing')" class="hover:text-goettl-red transition-colors">Plumbing</a>
+        <a href="#services" onclick="switchServiceTab('water')" class="hover:text-goettl-red transition-colors">Clean Water</a>
+        <a href="#smart-sadie" class="inline-flex items-center gap-1 text-goettl-red hover:text-goettl-darkRed transition-colors">
+          <span>★</span>
+          <span data-bind="planName">Smart Sadie® Plan</span>
+        </a>
+        <a href="#promos" class="hover:text-goettl-red transition-colors">Promos</a>
+        <a href="#financing" class="hover:text-goettl-red transition-colors">Financing</a>
+      </nav>
+
+      <!-- Right: Dual Action Buttons (Book Online + Phone) -->
+      <div class="hidden sm:flex items-center gap-2.5">
+        <button onclick="openBookingModal('24/7 Priority Online Dispatch')" class="bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider px-5 py-3 rounded-md shadow-crimson transition-all flex items-center gap-2">
+          <span>Book Online</span>
+          <span>→</span>
+        </button>
+        <a href="tel:5122537075" data-bind-href="phoneTel" class="bg-goettl-charcoal hover:bg-goettl-graphite text-white font-display font-extrabold text-xs sm:text-sm tracking-wide px-4 py-3 rounded-md transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4 text-goettl-crimson" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          <span data-bind="phone">(512) 253-7075</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="xl:hidden p-2.5 rounded-md border border-gray-300 text-goettl-charcoal">
+        <svg id="menuIconOpen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menuIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDrawer" class="hidden xl:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-6 space-y-3 shadow-xl">
+      <div class="grid grid-cols-2 gap-2 text-xs font-display font-bold uppercase">
+        <a href="#services" onclick="switchServiceTab('ac'); toggleMobileMenu()" class="p-3 rounded bg-goettl-stone hover:bg-goettl-softRed">Air Conditioning</a>
+        <a href="#services" onclick="switchServiceTab('heating'); toggleMobileMenu()" class="p-3 rounded bg-goettl-stone hover:bg-goettl-softRed">Heating</a>
+        <a href="#services" onclick="switchServiceTab('plumbing'); toggleMobileMenu()" class="p-3 rounded bg-goettl-stone hover:bg-goettl-softRed">Plumbing</a>
+        <a href="#services" onclick="switchServiceTab('water'); toggleMobileMenu()" class="p-3 rounded bg-goettl-stone hover:bg-goettl-softRed">Clean Water</a>
+        <a href="#smart-sadie" onclick="toggleMobileMenu()" class="p-3 rounded bg-goettl-softRed text-goettl-red">★ <span data-bind="planName">Smart Sadie® Plan</span></a>
+        <a href="#promos" onclick="toggleMobileMenu()" class="p-3 rounded bg-goettl-stone hover:bg-goettl-softRed">Special Promos</a>
+      </div>
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="toggleMobileMenu(); openBookingModal('Mobile Menu Online Booking')" class="w-full py-3.5 bg-goettl-red text-white font-display font-extrabold text-xs uppercase tracking-wider rounded-md">
+          Book Service Online →
+        </button>
+        <a href="tel:5122537075" data-bind-href="phoneTel" class="w-full py-3.5 bg-goettl-charcoal text-white font-display font-extrabold text-xs uppercase tracking-wider rounded-md text-center">
+          Call <span data-bind="phone">(512) 253-7075</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       3. GOETTL LOCATION HERO SECTION (Austin, TX 1:1)
+       ======================================================================== -->
+  <section class="relative bg-goettl-stone border-b border-gray-200 overflow-hidden">
+    <!-- Subtle Top Crimson Accent Stripe -->
+    <div class="h-1.5 w-full bg-gradient-to-r from-goettl-red via-goettl-crimson to-goettl-charcoal"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-20">
+      
+      <!-- Breadcrumb Navigation -->
+      <nav aria-label="Breadcrumb" class="mb-5 text-xs font-semibold text-gray-500 flex items-center gap-2">
+        <a href="#" class="hover:text-goettl-red">Home</a>
+        <span>»</span>
+        <a href="#service-areas" class="hover:text-goettl-red">Locations</a>
+        <span>»</span>
+        <span class="text-goettl-charcoal font-bold" data-bind="city">Austin, TX</span>
+      </nav>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left Column: Goettl Location Copy & Dual CTAs (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Bold Tagline Badge -->
+          <div class="inline-flex items-center gap-2 bg-goettl-softRed border border-goettl-red/25 text-goettl-red px-3.5 py-1.5 rounded-md">
+            <span class="w-2 h-2 rounded-full bg-goettl-red animate-ping"></span>
+            <span class="font-display font-extrabold text-xs uppercase tracking-wider">
+              24/7 AIR CONDITIONING &amp; PLUMBING SERVICE IN <span data-bind="cityUpper">AUSTIN, TX</span>
+            </span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="font-display font-black text-3xl sm:text-5xl lg:text-[54px] text-goettl-charcoal tracking-tight leading-[1.06]">
+            <span data-bind="cityShort">Austin</span>’s Wild Weather Means Your AC &amp; Plumbing Work Overtime. <span class="text-goettl-red">We’re Here 24/7.</span>
+          </h1>
+
+          <!-- Hero Subheadline -->
+          <p class="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl">
+            From triple-digit summer heatwaves to sudden winter freezes and stubborn <span data-bind="region">Hill Country</span> hard water, <strong class="text-goettl-charcoal" data-bind="companyName">Goettl</strong> has set the gold standard since <span data-bind="since">1939</span>. Our background-checked, drug-tested technicians arrive in fully stocked trucks—backed by our <strong>100% Satisfaction Guarantee</strong>.
+          </p>
+
+          <!-- Key Trust Bullet Pills -->
+          <div class="grid sm:grid-cols-3 gap-3 pt-1">
+            <div class="flex items-center gap-2.5 bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+              <span class="w-7 h-7 rounded-full bg-goettl-softRed text-goettl-red flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+              <span class="text-xs font-bold text-goettl-charcoal">Same-Day 24/7 Emergency Service</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+              <span class="w-7 h-7 rounded-full bg-goettl-softRed text-goettl-red flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+              <span class="text-xs font-bold text-goettl-charcoal">No Overtime Fees on Diagnostic</span>
+            </div>
+            <div class="flex items-center gap-2.5 bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+              <span class="w-7 h-7 rounded-full bg-goettl-softRed text-goettl-red flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+              <span class="text-xs font-bold text-goettl-charcoal">100% Right Way Guarantee®</span>
+            </div>
+          </div>
+
+          <!-- Dual CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+            <button onclick="openBookingModal('Hero Schedule Service Online')" class="px-8 py-4 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-sm uppercase tracking-wider rounded-md shadow-crimson transition-all flex items-center justify-center gap-2.5">
+              <span>Schedule Service Online</span>
+              <span>→</span>
+            </button>
+            <a href="tel:5122537075" data-bind-href="phoneTel" class="px-7 py-4 bg-goettl-charcoal hover:bg-goettl-graphite text-white font-display font-extrabold text-sm uppercase tracking-wider rounded-md transition-all flex items-center justify-center gap-2.5">
+              <svg class="w-4 h-4 text-goettl-crimson" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+              <span>Call <span data-bind="phone">(512) 253-7075</span></span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Visual Hero Card with Floating Goettl Trust Badges (5 Cols) -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-goettl-charcoal">
+            <img 
+              src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80" 
+              alt="Master HVAC and Plumbing Technician Inspecting System" 
+              class="w-full h-[420px] sm:h-[460px] object-cover object-center opacity-90"
+              onerror="this.src='https://placehold.co/800x600/141414/FFFFFF?text=24%2F7+HVAC+%26+Plumbing+Tech'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-goettl-charcoal via-goettl-charcoal/20 to-transparent"></div>
+
+            <!-- Top-Left Floating Rating Badge -->
+            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-lg border border-gray-200 flex items-center gap-3">
+              <div class="text-goettl-gold text-base font-black tracking-tight">★★★★★</div>
+              <div>
+                <div class="font-display font-black text-xs text-goettl-charcoal">4.9 / 5.0 STAR RATING</div>
+                <div class="text-[11px] font-semibold text-gray-500">2,400+ Verified <span data-bind="cityShort">Austin</span> Reviews</div>
+              </div>
+            </div>
+
+            <!-- Top-Right Guarantee Seal -->
+            <div class="absolute top-4 right-4 bg-goettl-red text-white px-3.5 py-2 rounded-xl shadow-lg text-center">
+              <div class="font-display font-black text-[10px] uppercase tracking-wider">THE RIGHT WAY</div>
+              <div class="font-display font-bold text-[9px] uppercase opacity-90">NOT THE EASY WAY®</div>
+            </div>
+
+            <!-- Bottom Live Dispatch Overlay Card -->
+            <div class="absolute bottom-4 inset-x-4 bg-goettl-charcoal/95 backdrop-blur-md border border-white/15 p-4 rounded-xl text-white flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping shrink-0"></span>
+                <div>
+                  <div class="font-display font-extrabold text-xs uppercase tracking-wider text-white">
+                    SAME-DAY 24/7 DISPATCH — TRUCKS ROLLING NOW
+                  </div>
+                  <div class="text-xs text-white/75 mt-0.5">
+                    15+ Stocked Trucks Active in <span data-bind="city">Austin, TX</span>
+                  </div>
+                </div>
+              </div>
+              <button onclick="openBookingModal('Hero Live Truck Dispatch')" class="shrink-0 bg-goettl-red hover:bg-goettl-crimson text-white font-display font-bold text-xs uppercase px-3.5 py-2 rounded">
+                Dispatch →
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. INTERACTIVE SEASONAL PROMO COUPONS (`Austin Special Offers & Promos`)
+       ======================================================================== -->
+  <section id="promos" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-200">
+    
+    <!-- Header + Filter Pills -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+      <div>
+        <div class="inline-flex items-center gap-2 text-goettl-red font-display font-extrabold text-xs uppercase tracking-widest mb-2">
+          <span>🏷️ LIMITED-TIME BRANCH SPECIALS</span>
+        </div>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-goettl-charcoal tracking-tight">
+          <span data-bind="cityShort">Austin</span> Special Offers &amp; Promos
+        </h2>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap gap-2" id="promoFilterTabs">
+        <button onclick="filterPromos('all', this)" class="promo-tab bg-goettl-red text-white font-display font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-md transition-colors">
+          All Promos (4)
+        </button>
+        <button onclick="filterPromos('ac', this)" class="promo-tab bg-goettl-stone hover:bg-gray-200 text-goettl-charcoal font-display font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-md transition-colors">
+          Air Conditioning
+        </button>
+        <button onclick="filterPromos('plumbing', this)" class="promo-tab bg-goettl-stone hover:bg-gray-200 text-goettl-charcoal font-display font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-md transition-colors">
+          Plumbing &amp; Drain
+        </button>
+        <button onclick="filterPromos('military', this)" class="promo-tab bg-goettl-stone hover:bg-gray-200 text-goettl-charcoal font-display font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-md transition-colors">
+          Military / Senior (5% Off)
+        </button>
+      </div>
+    </div>
+
+    <!-- 4 Goettl Dashed-Border Coupon Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="promoCardsGrid">
+      
+      <!-- Coupon 1: $129 AC Rejuuuvenation® -->
+      <div data-promo-cat="ac" class="promo-card coupon-dashed bg-white rounded-xl p-6 flex flex-col justify-between shadow-card hover:shadow-xl transition-all">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="bg-goettl-softRed text-goettl-red font-display font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
+              AC MAINTENANCE
+            </span>
+            <span class="text-[11px] font-bold text-gray-500 flex items-center gap-1">
+              <span>⏳</span> Expires in 69 days
+            </span>
+          </div>
+          <div class="font-display font-black text-4xl text-goettl-red tracking-tight leading-none mb-2">
+            $129
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-goettl-charcoal mb-2">
+            AC Rejuuuvenation®
+          </h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-5">
+            Our exclusive 6-step AC maintenance, deep coil washing &amp; precision calibration service to extend the life of your AC unit.
+          </p>
+        </div>
+        <div>
+          <button onclick="openBookingModal('Claim Promo: $129 AC Rejuuuvenation®')" class="w-full py-3 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs uppercase tracking-wider rounded-md transition-colors">
+            Claim $129 Offer →
+          </button>
+          <p class="text-[10px] text-gray-400 text-center mt-2">Residential only. Cannot combine with other offers.</p>
+        </div>
+      </div>
+
+      <!-- Coupon 2: $50 OFF Any HVAC or Plumbing Repair -->
+      <div data-promo-cat="ac plumbing" class="promo-card coupon-dashed bg-white rounded-xl p-6 flex flex-col justify-between shadow-card hover:shadow-xl transition-all">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="bg-goettl-softRed text-goettl-red font-display font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
+              HVAC OR PLUMBING
+            </span>
+            <span class="text-[11px] font-bold text-gray-500 flex items-center gap-1">
+              <span>⏳</span> Expires in 69 days
+            </span>
+          </div>
+          <div class="font-display font-black text-4xl text-goettl-red tracking-tight leading-none mb-2">
+            $50 OFF
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-goettl-charcoal mb-2">
+            Any HVAC or Plumbing Repair
+          </h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-5">
+            Valid on any residential air conditioning, heating, or plumbing repair service across <span data-bind="city">Austin, TX</span>.
+          </p>
+        </div>
+        <div>
+          <button onclick="openBookingModal('Claim Promo: $50 OFF Any HVAC or Plumbing Repair')" class="w-full py-3 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs uppercase tracking-wider rounded-md transition-colors">
+            Claim $50 Off Repair →
+          </button>
+          <p class="text-[10px] text-gray-400 text-center mt-2">Excludes diagnostic fee. One per household.</p>
+        </div>
+      </div>
+
+      <!-- Coupon 3: Up to $2,200 OFF New High-Efficiency HVAC System -->
+      <div data-promo-cat="ac military" class="promo-card coupon-dashed bg-white rounded-xl p-6 flex flex-col justify-between shadow-card hover:shadow-xl transition-all">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="bg-goettl-charcoal text-white font-display font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
+              NEW SYSTEM REBATE
+            </span>
+            <span class="text-[11px] font-bold text-gray-500 flex items-center gap-1">
+              <span>⏳</span> Expires in 69 days
+            </span>
+          </div>
+          <div class="font-display font-black text-3xl sm:text-4xl text-goettl-red tracking-tight leading-none mb-2">
+            UP TO $2,200 OFF
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-goettl-charcoal mb-2">
+            New High-Efficiency HVAC System
+          </h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-5">
+            Upgrade your home comfort with flexible financing + instant manufacturer &amp; branch rebates. Plus 5% Military/Senior discount.
+          </p>
+        </div>
+        <div>
+          <button onclick="openBookingModal('Claim Promo: Up to $2,200 OFF New HVAC System')" class="w-full py-3 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs uppercase tracking-wider rounded-md transition-colors">
+            Claim $2,200 Rebate →
+          </button>
+          <p class="text-[10px] text-gray-400 text-center mt-2">On qualifying complete systems. Free in-home estimate.</p>
+        </div>
+      </div>
+
+      <!-- Coupon 4: Complimentary Drain Inspection or Water Quality Test -->
+      <div data-promo-cat="plumbing military" class="promo-card coupon-dashed bg-white rounded-xl p-6 flex flex-col justify-between shadow-card hover:shadow-xl transition-all">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="bg-goettl-softRed text-goettl-red font-display font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
+              PLUMBING &amp; WATER
+            </span>
+            <span class="text-[11px] font-bold text-gray-500 flex items-center gap-1">
+              <span>⏳</span> Expires in 69 days
+            </span>
+          </div>
+          <div class="font-display font-black text-4xl text-goettl-red tracking-tight leading-none mb-2">
+            FREE
+          </div>
+          <h3 class="font-display font-extrabold text-lg text-goettl-charcoal mb-2">
+            Drain Check or Water Quality Test
+          </h3>
+          <p class="text-xs text-gray-600 leading-relaxed mb-5">
+            Includes drain flow inspection where accessible OR immediate <span data-bind="region">Hill Country</span> TDS water hardness &amp; chlorine testing.
+          </p>
+        </div>
+        <div>
+          <button onclick="openBookingModal('Claim Promo: Complimentary Drain Check or Water Quality Test')" class="w-full py-3 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs uppercase tracking-wider rounded-md transition-colors">
+            Claim Free Inspection →
+          </button>
+          <p class="text-[10px] text-gray-400 text-center mt-2">With any scheduled visit or water consultation.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. INTERACTIVE 4-PILLAR SERVICE MATRIX (`Our Home Services in Austin`)
+       ======================================================================== -->
+  <section id="services" class="py-16 sm:py-24 bg-goettl-stone border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="font-display font-extrabold text-xs uppercase tracking-widest text-goettl-red mb-2">
+          COMPLETE HOME COMFORT &amp; MECHANICAL AUTHORITY
+        </div>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-goettl-charcoal tracking-tight">
+          Our Home Services in <span data-bind="cityShort">Austin</span>
+        </h2>
+        <p class="text-sm sm:text-base text-gray-600 mt-3">
+          Select a department below to explore our 24/7 repair, replacement, and preventative maintenance solutions tailored for <span data-bind="city">Austin, TX</span> homes.
+        </p>
+      </div>
+
+      <!-- 4-Pillar Interactive Service Tabs -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8" id="servicePillarButtons">
+        <button onclick="switchServiceTab('ac')" id="tabBtn-ac" class="p-4 sm:p-5 rounded-xl font-display font-extrabold text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2.5 bg-goettl-red text-white shadow-crimson transition-all">
+          <span>❄️</span>
+          <span>Air Conditioning</span>
+        </button>
+        <button onclick="switchServiceTab('heating')" id="tabBtn-heating" class="p-4 sm:p-5 rounded-xl font-display font-extrabold text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2.5 bg-white hover:bg-gray-100 text-goettl-charcoal border border-gray-200 transition-all">
+          <span>🔥</span>
+          <span>Heating</span>
+        </button>
+        <button onclick="switchServiceTab('plumbing')" id="tabBtn-plumbing" class="p-4 sm:p-5 rounded-xl font-display font-extrabold text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2.5 bg-white hover:bg-gray-100 text-goettl-charcoal border border-gray-200 transition-all">
+          <span>🔧</span>
+          <span>Plumbing</span>
+        </button>
+        <button onclick="switchServiceTab('water')" id="tabBtn-water" class="p-4 sm:p-5 rounded-xl font-display font-extrabold text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2.5 bg-white hover:bg-gray-100 text-goettl-charcoal border border-gray-200 transition-all">
+          <span>💧</span>
+          <span>Clean Water</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Tab Content Container -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-10 shadow-card">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          
+          <!-- Left: Sub-Service Cards & Local Context (7 Cols) -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-goettl-softRed text-goettl-red font-display font-extrabold text-xs uppercase tracking-wider" id="serviceTabBadge">
+              24/7 COOLING &amp; HIGH-EFFICIENCY AC SPECIALISTS
+            </div>
+
+            <h3 class="font-display font-black text-2xl sm:text-4xl text-goettl-charcoal tracking-tight" id="serviceTabHeadline">
+              Beat the Triple-Digit <span data-bind="cityShort">Austin</span> Summer Heat
+            </h3>
+
+            <p class="text-sm sm:text-base text-gray-600 leading-relaxed" id="serviceTabDescription">
+              When summer temperatures soar past 100°F across <span data-bind="city">Austin, TX</span>, your air conditioner doesn't get a break. Whether you need an emergency midnight repair, our signature <strong>AC Rejuuuvenation®</strong>, or a high-SEER2 inverter replacement, we do it the right way.
+            </p>
+
+            <!-- Sub-Service Clickable Grid -->
+            <div class="grid sm:grid-cols-2 gap-3.5" id="serviceSubList">
+              <!-- Populated dynamically by switchServiceTab() -->
+            </div>
+
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <button id="serviceTabPrimaryCta" onclick="openBookingModal('Book Air Conditioning Service')" class="px-7 py-4 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-crimson transition-colors">
+                Book Air Conditioning Service →
+              </button>
+              <a href="tel:5122537075" data-bind-href="phoneTel" class="font-display font-extrabold text-sm text-goettl-charcoal hover:text-goettl-red transition-colors">
+                Or Call <span data-bind="phone">(512) 253-7075</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Department Visual & Guarantee Highlight (5 Cols) -->
+          <div class="lg:col-span-5">
+            <div class="rounded-xl overflow-hidden border border-gray-200 bg-goettl-charcoal relative">
+              <img 
+                id="serviceTabImage"
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80" 
+                alt="Service Department Technician" 
+                class="w-full h-80 sm:h-96 object-cover opacity-90"
+                onerror="this.src='https://placehold.co/700x500/141414/FFFFFF?text=Goettl+Home+Services'"
+              />
+              <div class="p-5 bg-goettl-charcoal text-white border-t border-white/10">
+                <div class="font-display font-extrabold text-xs uppercase tracking-wider text-goettl-crimson" id="serviceTabCalloutTitle">
+                  EXCLUSIVE AC REJUUUVENATION®
+                </div>
+                <p class="text-xs text-white/80 mt-1 leading-relaxed" id="serviceTabCalloutCopy">
+                  Restores lost cooling capacity, lowers monthly ERCOT electric bills, and prevents peak-summer compressor lockups.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. BY THE NUMBERS — LOCAL BRANCH AUTHORITY COUNTER BAR (Goettl 1:1)
+       ======================================================================== -->
+  <section class="bg-charcoal-mesh text-white py-14 sm:py-16 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="font-display font-extrabold text-xs uppercase tracking-widest text-goettl-crimson">
+          BY THE NUMBERS · <span data-bind="cityUpper">AUSTIN, TX</span> BRANCH AUTHORITY
+        </span>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-white mt-1">
+          Local Scale. Unmatched Technical Standards.
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-goettl-graphite border border-white/10 p-6 rounded-xl text-center">
+          <div class="font-display font-black text-4xl sm:text-5xl text-goettl-crimson mb-2">80+</div>
+          <div class="font-display font-bold text-sm text-white uppercase tracking-wide">Years of Branch Know-How</div>
+          <p class="text-xs text-white/65 mt-1.5">Combined local master HVAC &amp; plumbing leadership in our <span data-bind="cityShort">Austin</span> branch.</p>
+        </div>
+
+        <div class="bg-goettl-graphite border border-white/10 p-6 rounded-xl text-center">
+          <div class="font-display font-black text-4xl sm:text-5xl text-goettl-crimson mb-2">15+</div>
+          <div class="font-display font-bold text-sm text-white uppercase tracking-wide">Fully Stocked Service Trucks</div>
+          <p class="text-xs text-white/65 mt-1.5">Rolling warehouses stocked with OEM parts serving the entire metro 24/7.</p>
+        </div>
+
+        <div class="bg-goettl-graphite border border-white/10 p-6 rounded-xl text-center">
+          <div class="font-display font-black text-4xl sm:text-5xl text-goettl-crimson mb-2">100%</div>
+          <div class="font-display font-bold text-sm text-white uppercase tracking-wide">Vetted &amp; Certified Techs</div>
+          <p class="text-xs text-white/65 mt-1.5">State-licensed, thoroughly background-checked, and drug-tested professionals.</p>
+        </div>
+
+        <div class="bg-goettl-graphite border border-white/10 p-6 rounded-xl text-center">
+          <div class="font-display font-black text-4xl sm:text-5xl text-goettl-crimson mb-2">1,800+</div>
+          <div class="font-display font-bold text-sm text-white uppercase tracking-wide"><span data-bind="planName">Smart Sadie®</span> Homes</div>
+          <p class="text-xs text-white/65 mt-1.5">Local homeowners protected by 24/7 AI sensor monitoring &amp; bi-annual tune-ups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. THE SMART SADIE® MAINTENANCE PLAN VS. STANDARD SERVICE COMPARISON
+       ======================================================================== -->
+  <section id="smart-sadie" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-200">
+    
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      
+      <!-- Left Column: Smart Sadie® Value Proposition & $100 Sign-Up Bonus (5 Cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-900 border border-amber-300 px-3.5 py-1.5 rounded-full font-display font-extrabold text-xs uppercase tracking-wider">
+          <span>★ INCLUDES $100 SIGN-UP BONUS</span>
+        </div>
+
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-goettl-charcoal tracking-tight leading-[1.08]">
+          Meet the <span class="text-goettl-red" data-bind="planName">Smart Sadie®</span> Maintenance Plan.
+        </h2>
+
+        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+          Stop waiting for your AC or water heater to fail on the hottest weekend of the year. <strong class="text-goettl-charcoal" data-bind="planName">Smart Sadie®</strong> pairs bi-annual precision tune-ups with <strong>24/7 SmartAC™ wireless sensors</strong> that alert you and our branch to freeze-ups, water pan leaks, and airflow drops before a breakdown happens.
+        </p>
+
+        <!-- 4 Signature Sadie Perks -->
+        <div class="space-y-3.5">
+          <div class="flex items-start gap-3.5 bg-goettl-stone p-4 rounded-xl border border-gray-200">
+            <span class="w-7 h-7 rounded-full bg-goettl-red text-white font-display font-black text-xs flex items-center justify-center shrink-0 mt-0.5">01</span>
+            <div>
+              <h4 class="font-display font-extrabold text-sm text-goettl-charcoal">24/7 Real-Time SmartAC™ Sensors</h4>
+              <p class="text-xs text-gray-600 mt-0.5">Monitors water leaks, filter life, and coil performance from your phone.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5 bg-goettl-stone p-4 rounded-xl border border-gray-200">
+            <span class="w-7 h-7 rounded-full bg-goettl-red text-white font-display font-black text-xs flex items-center justify-center shrink-0 mt-0.5">02</span>
+            <div>
+              <h4 class="font-display font-extrabold text-sm text-goettl-charcoal">Sadie Repair Credit Program (Up to $2,500)</h4>
+              <p class="text-xs text-gray-600 mt-0.5">If a covered repair leads to system replacement within 1 year, apply up to $2,500 of your repair cost toward a new unit.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5 bg-goettl-stone p-4 rounded-xl border border-gray-200">
+            <span class="w-7 h-7 rounded-full bg-goettl-red text-white font-display font-black text-xs flex items-center justify-center shrink-0 mt-0.5">03</span>
+            <div>
+              <h4 class="font-display font-extrabold text-sm text-goettl-charcoal">Front-of-the-Line Priority + 10% Off Repairs</h4>
+              <p class="text-xs text-gray-600 mt-0.5">Jump ahead of non-members during peak heatwaves and save 10% on parts &amp; labor.</p>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="openBookingModal('Enroll in Smart Sadie® Plan ($100 Bonus)')" class="w-full sm:w-auto px-8 py-4 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-crimson transition-colors">
+          Join <span data-bind="planName">Smart Sadie®</span> &amp; Claim $100 Bonus →
+        </button>
+      </div>
+
+      <!-- Right Column: Side-by-Side Comparison Matrix (7 Cols) -->
+      <div class="lg:col-span-7">
+        <div class="bg-white rounded-2xl border-2 border-goettl-charcoal overflow-hidden shadow-2xl">
+          
+          <!-- Table Header -->
+          <div class="grid grid-cols-12 bg-goettl-charcoal text-white p-4 sm:p-5 items-center">
+            <div class="col-span-5 font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider">
+              PROTECTION FEATURE
+            </div>
+            <div class="col-span-3 text-center font-display font-bold text-xs text-white/65 uppercase">
+              Non-Member
+            </div>
+            <div class="col-span-4 text-center bg-goettl-red py-2 px-2 rounded-lg font-display font-black text-xs sm:text-sm uppercase tracking-wider">
+              ★ <span data-bind="planName">Smart Sadie®</span>
+            </div>
+          </div>
+
+          <!-- Comparison Rows -->
+          <div class="divide-y divide-gray-200 text-xs sm:text-sm">
+            <div class="grid grid-cols-12 p-4 items-center bg-white">
+              <div class="col-span-5 font-bold text-goettl-charcoal">24/7 Smart Leak &amp; Freeze Sensors</div>
+              <div class="col-span-3 text-center text-gray-400 font-semibold">✕ Not Included</div>
+              <div class="col-span-4 text-center font-extrabold text-goettl-red bg-goettl-softRed py-1.5 rounded">✓ Included Free</div>
+            </div>
+
+            <div class="grid grid-cols-12 p-4 items-center bg-goettl-stone">
+              <div class="col-span-5 font-bold text-goettl-charcoal">Annual HVAC &amp; Plumbing Tune-Ups</div>
+              <div class="col-span-3 text-center text-gray-500">Full Retail Price</div>
+              <div class="col-span-4 text-center font-extrabold text-goettl-red bg-goettl-softRed py-1.5 rounded">✓ 2+ Visits / Year</div>
+            </div>
+
+            <div class="grid grid-cols-12 p-4 items-center bg-white">
+              <div class="col-span-5 font-bold text-goettl-charcoal">Repair Discount (Parts &amp; Labor)</div>
+              <div class="col-span-3 text-center text-gray-400">0%</div>
+              <div class="col-span-4 text-center font-extrabold text-goettl-red bg-goettl-softRed py-1.5 rounded">✓ 10% Off Always</div>
+            </div>
+
+            <div class="grid grid-cols-12 p-4 items-center bg-goettl-stone">
+              <div class="col-span-5 font-bold text-goettl-charcoal">Diagnostic / Dispatch Fee</div>
+              <div class="col-span-3 text-center text-gray-500">Standard Fee</div>
+              <div class="col-span-4 text-center font-extrabold text-goettl-red bg-goettl-softRed py-1.5 rounded">✓ Reduced / Waived</div>
+            </div>
+
+            <div class="grid grid-cols-12 p-4 items-center bg-white">
+              <div class="col-span-5 font-bold text-goettl-charcoal">Repair-to-Replacement Credit</div>
+              <div class="col-span-3 text-center text-gray-400">None</div>
+              <div class="col-span-4 text-center font-extrabold text-goettl-red bg-goettl-softRed py-1.5 rounded">✓ Up to $2,500 Credit</div>
+            </div>
+
+            <div class="grid grid-cols-12 p-4 items-center bg-goettl-stone">
+              <div class="col-span-5 font-bold text-goettl-charcoal">Sign-Up Loyalty Bonus</div>
+              <div class="col-span-3 text-center text-gray-400">None</div>
+              <div class="col-span-4 text-center font-extrabold text-amber-600 bg-amber-50 py-1.5 rounded border border-amber-200">★ $100 Sadie Bonus</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. FLEXIBLE FINANCING BANNER & INTERACTIVE PAYMENT ESTIMATOR (GoodLeap Style)
+       ======================================================================== -->
+  <section id="financing" class="py-16 sm:py-24 bg-goettl-stone border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-goettl-charcoal text-white rounded-2xl p-7 sm:p-12 shadow-2xl border border-white/10">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left: Financing Copy & Bullet Points (6 Cols) -->
+          <div class="lg:col-span-6 space-y-5">
+            <div class="inline-flex items-center gap-2 bg-goettl-red text-white px-3.5 py-1 rounded font-display font-extrabold text-xs uppercase tracking-wider">
+              <span>FAST, FLEXIBLE HOME COMFORT FINANCING</span>
+            </div>
+
+            <h2 class="font-display font-black text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+              New High-Efficiency System For As Low As <span class="text-goettl-crimson">$99/Mo</span> or Tankless Water Heater for <span class="text-goettl-crimson">~$5/Day</span>.
+            </h2>
+
+            <p class="text-sm text-white/75 leading-relaxed">
+              Don’t let an unexpected breakdown drain your savings. Through our premier lending partners (including GoodLeap &amp; Synchrony), <strong class="text-white" data-bind="companyName">Goettl</strong> offers fast, paperless financing right from our technician’s tablet.
+            </p>
+
+            <ul class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-white/90 pt-1">
+              <li class="flex items-center gap-2"><span class="text-goettl-crimson font-black">✓</span> Soft credit check (no score impact)</li>
+              <li class="flex items-center gap-2"><span class="text-goettl-crimson font-black">✓</span> Instant pre-approval in minutes</li>
+              <li class="flex items-center gap-2"><span class="text-goettl-crimson font-black">✓</span> Project options up to $100,000</li>
+              <li class="flex items-center gap-2"><span class="text-goettl-crimson font-black">✓</span> Flexible 60 to 180 month terms</li>
+            </ul>
+
+            <div class="pt-3">
+              <button onclick="openBookingModal('Pre-Qualify for Flexible Monthly Financing')" class="px-7 py-4 bg-goettl-red hover:bg-goettl-crimson text-white font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-md shadow-crimson transition-colors">
+                Check Financing Eligibility (No Credit Impact) →
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Monthly Payment Estimator Slider (6 Cols) -->
+          <div class="lg:col-span-6">
+            <div class="bg-white text-goettl-charcoal rounded-xl p-6 sm:p-8 shadow-xl">
+              <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-5">
+                <div>
+                  <span class="font-display font-extrabold text-[10px] uppercase tracking-widest text-goettl-red block">INTERACTIVE PAYMENT ESTIMATOR</span>
+                  <h3 class="font-display font-black text-xl text-goettl-charcoal">Preview Your Monthly Comfort Plan</h3>
+                </div>
+                <span class="bg-goettl-stone text-goettl-charcoal font-display font-bold text-xs px-3 py-1 rounded">
+                  120–144 MO TERM
+                </span>
+              </div>
+
+              <!-- Estimated Monthly Readout -->
+              <div class="grid grid-cols-2 gap-4 bg-goettl-stone p-5 rounded-xl border border-gray-200 mb-6">
+                <div>
+                  <div class="text-[11px] font-bold uppercase text-gray-500">EST. PROJECT AMOUNT</div>
+                  <div class="font-display font-black text-2xl sm:text-3xl text-goettl-charcoal mt-1" id="financeProjectDisplay">$9,500</div>
+                  <div class="text-[11px] text-gray-500 mt-0.5" id="financeSystemTypeLabel">Complete High-SEER2 AC System</div>
+                </div>
+                <div class="border-l border-gray-300 pl-4">
+                  <div class="text-[11px] font-bold uppercase text-goettl-red">EST. MONTHLY PAYMENT</div>
+                  <div class="font-display font-black text-3xl sm:text-4xl text-goettl-red mt-0.5">
+                    $<span id="financeMonthlyDisplay">99</span><span class="text-base font-bold text-gray-600">/mo*</span>
+                  </div>
+                  <div class="text-[11px] font-semibold text-emerald-700 mt-0.5">~$<span id="financeDailyDisplay">3.30</span> / day</div>
+                </div>
+              </div>
+
+              <!-- Slider Control -->
+              <div class="space-y-2">
+                <div class="flex justify-between text-xs font-bold text-gray-600">
+                  <span>Slide to Adjust Equipment Budget</span>
+                  <span class="text-goettl-red">Drag Slider</span>
+                </div>
+                <input 
+                  type="range" 
+                  min="3500" 
+                  max="22000" 
+                  step="500" 
+                  value="9500" 
+                  oninput="updateFinanceCalculator(this.value)"
+                  class="finance-slider"
+                />
+                <div class="flex justify-between text-[11px] font-semibold text-gray-400 pt-1">
+                  <span>$3,500 (Tankless Water Heater)</span>
+                  <span>$9,500 (Central AC)</span>
+                  <span>$22,000 (Multi-Zone Inverter)</span>
+                </div>
+              </div>
+
+              <p class="text-[10px] text-gray-400 mt-4 leading-normal">
+                *Estimated monthly payment shown for illustrative purposes based on approved credit and 132-month promotional amortizing terms. Actual terms vary by lender.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. LOCAL BRANCH MANAGER MESSAGE + VERIFIED NEIGHBOR REVIEWS (Technician Credits)
+       ======================================================================== -->
+  <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-200">
+    
+    <!-- Local Branch Manager Quote Block -->
+    <div class="bg-goettl-softRed border-l-4 border-goettl-red rounded-r-2xl p-7 sm:p-10 mb-16">
+      <div class="grid md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-9 space-y-3">
+          <div class="font-display font-extrabold text-xs uppercase tracking-widest text-goettl-red">
+            A MESSAGE FROM OUR <span data-bind="cityUpper">AUSTIN, TX</span> BRANCH LEADERSHIP
+          </div>
+          <blockquote class="font-display font-extrabold text-xl sm:text-2xl text-goettl-charcoal leading-snug italic">
+            “In <span data-bind="cityShort">Austin</span>, HVAC and plumbing are never a one-size-fits-all situation. Your needs change from season to season, and our dedicated local team knows how to keep your home ready for whatever weather throws at it—always doing things the right way, never the easy way.”
+          </blockquote>
+          <div class="pt-1 font-bold text-sm text-goettl-charcoal">
+            — <span data-bind="manager">Garrett Hollis</span>, Local Branch &amp; Installation Manager · <span data-bind="companyName">Goettl</span> <span data-bind="city">Austin, TX</span>
+          </div>
+        </div>
+        <div class="md:col-span-3 flex md:justify-end">
+          <div class="bg-white border border-goettl-red/20 p-4 rounded-xl text-center shadow-sm">
+            <div class="font-display font-black text-3xl text-goettl-red">4.9 ★</div>
+            <div class="text-xs font-bold text-goettl-charcoal mt-0.5">2,400+ Verified Reviews</div>
+            <div class="text-[11px] text-gray-500">Google · BBB · Neighborly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verified Neighbor Reviews with Named Technician Credit -->
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <div class="font-display font-extrabold text-xs uppercase tracking-widest text-goettl-red mb-2">
+        REAL REVIEWS FROM YOUR NEIGHBORS
+      </div>
+      <h2 class="font-display font-black text-3xl sm:text-4xl text-goettl-charcoal tracking-tight">
+        See Why <span data-bind="cityShort">Austin</span> Homeowners Trust <span data-bind="companyName">Goettl</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Review Card 1 -->
+      <article class="bg-white border border-gray-200 rounded-xl p-6 shadow-card flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="bg-goettl-softRed text-goettl-red font-display font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
+              EMERGENCY AC CALL
+            </span>
+            <span class="text-goettl-gold text-sm font-black">★★★★★</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed mb-6">
+            “Our capacitor and fan motor went out at 7:30 PM when it was still 98 degrees outside. <strong data-bind="companyName">Goettl</strong> had a stocked truck in our driveway within 90 minutes. Bo explained every reading on his meter and got cold air flowing before bedtime.”
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
+          <div>
+            <div class="font-bold text-goettl-charcoal">Marcus &amp; Elena V.</div>
+            <div class="text-gray-500">Pflugerville / <span data-bind="city">Austin, TX</span></div>
+          </div>
+          <div class="bg-goettl-stone px-2.5 py-1 rounded font-bold text-goettl-charcoal">
+            Tech: Bo M.
+          </div>
+        </div>
+      </article>
+
+      <!-- Review Card 2 -->
+      <article class="bg-white border border-gray-200 rounded-xl p-6 shadow-card flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="bg-goettl-softRed text-goettl-red font-display font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
+              AC REJUUUVENATION®
+            </span>
+            <span class="text-goettl-gold text-sm font-black">★★★★★</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed mb-6">
+            “Nash performed the 6-step AC Rejuuuvenation and installed our Smart Sadie sensor. He spent nearly two hours chemically washing the outdoor coils and balancing airflow. Easily the most thorough HVAC technician we’ve ever had.”
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
+          <div>
+            <div class="font-bold text-goettl-charcoal">David K.</div>
+            <div class="text-gray-500">Cedar Park / <span data-bind="city">Austin, TX</span></div>
+          </div>
+          <div class="bg-goettl-stone px-2.5 py-1 rounded font-bold text-goettl-charcoal">
+            Tech: Nash R.
+          </div>
+        </div>
+      </article>
+
+      <!-- Review Card 3 -->
+      <article class="bg-white border border-gray-200 rounded-xl p-6 shadow-card flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="bg-goettl-softRed text-goettl-red font-display font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
+              WATER SOFTENER &amp; PLUMBING
+            </span>
+            <span class="text-goettl-gold text-sm font-black">★★★★★</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed mb-6">
+            “Hard water scale was destroying our fixtures and water heater. Wil tested our water on the spot and installed a whole-home filtration + tankless water heater system with copper manifolds that look like a work of art.”
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
+          <div>
+            <div class="font-bold text-goettl-charcoal">Sarah Jenkins</div>
+            <div class="text-gray-500">Lakeway / <span data-bind="city">Austin, TX</span></div>
+          </div>
+          <div class="bg-goettl-stone px-2.5 py-1 rounded font-bold text-goettl-charcoal">
+            Tech: Wil H.
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. SERVICE AREAS & LOCAL BRANCH DISPATCH HUB
+       ======================================================================== -->
+  <section id="service-areas" class="py-16 sm:py-20 bg-goettl-stone">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left: Interactive Service Area City Pills (7 Cols) -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="font-display font-extrabold text-xs uppercase tracking-widest text-goettl-red">
+            FAST LOCAL DISPATCH ACROSS THE METRO
+          </div>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-goettl-charcoal tracking-tight">
+            Serving <span data-bind="city">Austin, TX</span> &amp; The <span data-bind="region">Surrounding Hill Country</span>
+          </h2>
+          <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+            Our GPS-dispatched service trucks are stationed throughout the metro area for rapid response times. Click any community below to schedule service in your neighborhood:
+          </p>
+
+          <!-- 12 Goettl Austin Service Area Pills -->
+          <div class="flex flex-wrap gap-2.5 pt-2">
+            <button onclick="openBookingModal('Service Request: Austin Metro')" class="px-4 py-2.5 bg-goettl-red text-white font-display font-bold text-xs rounded-full shadow-sm">📍 <span data-bind="cityShort">Austin</span> (HQ)</button>
+            <button onclick="openBookingModal('Service Request: Round Rock')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Round Rock</button>
+            <button onclick="openBookingModal('Service Request: Cedar Park')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Cedar Park</button>
+            <button onclick="openBookingModal('Service Request: Pflugerville')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Pflugerville</button>
+            <button onclick="openBookingModal('Service Request: Georgetown')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Georgetown</button>
+            <button onclick="openBookingModal('Service Request: Lakeway')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Lakeway</button>
+            <button onclick="openBookingModal('Service Request: Bee Cave')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Bee Cave</button>
+            <button onclick="openBookingModal('Service Request: Dripping Springs')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Dripping Springs</button>
+            <button onclick="openBookingModal('Service Request: Buda')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Buda</button>
+            <button onclick="openBookingModal('Service Request: Kyle')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Kyle</button>
+            <button onclick="openBookingModal('Service Request: Leander')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 Leander</button>
+            <button onclick="openBookingModal('Service Request: San Marcos')" class="px-4 py-2.5 bg-white hover:bg-goettl-softRed border border-gray-200 text-goettl-charcoal font-bold text-xs rounded-full transition-colors">📍 San Marcos</button>
+          </div>
+        </div>
+
+        <!-- Right: Local Branch Dispatch Card (5 Cols) -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-2xl border-2 border-goettl-charcoal p-7 shadow-xl space-y-5">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-4">
+              <div>
+                <span class="font-display font-extrabold text-[10px] uppercase tracking-widest text-goettl-red block">LOCAL BRANCH HEADQUARTERS</span>
+                <h3 class="font-display font-black text-xl text-goettl-charcoal"><span data-bind="companyName">Goettl</span> — <span data-bind="city">Austin, TX</span></h3>
+              </div>
+              <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-display font-extrabold text-[10px] uppercase rounded">
+                OPEN 24/7
+              </span>
+            </div>
+
+            <div class="space-y-3 text-xs sm:text-sm">
+              <div>
+                <span class="text-gray-400 font-bold uppercase text-[10px] block">BRANCH ADDRESS</span>
+                <strong class="text-goettl-charcoal"><span data-bind="address">3600 Silver Dollar Circle</span>, <span data-bind="city">Austin, TX</span></strong>
+              </div>
+              <div>
+                <span class="text-gray-400 font-bold uppercase text-[10px] block">24/7 EMERGENCY DISPATCH PHONE</span>
+                <a href="tel:5122537075" data-bind-href="phoneTel" class="font-display font-black text-2xl text-goettl-red hover:underline" data-bind="phone">(512) 253-7075</a>
+              </div>
+              <div>
+                <span class="text-gray-400 font-bold uppercase text-[10px] block">STATE LICENSES</span>
+                <span class="font-semibold text-gray-700" data-bind="license">HVAC: TACLA115088C · Plumbing: M-41195</span>
+              </div>
+            </div>
+
+            <button onclick="openBookingModal('Branch Card Online Dispatch')" class="w-full py-4 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs uppercase tracking-wider rounded-md shadow-crimson transition-colors">
+              Schedule Service With This Branch →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       ENTERPRISE GOETTL FOOTER
+       ======================================================================== -->
+  <footer class="bg-goettl-charcoal text-white/75 pt-14 pb-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded bg-goettl-red flex items-center justify-center text-white font-display font-black">✓</div>
+            <span class="font-display font-black text-2xl text-white uppercase" data-bind="companyName">GOETTL</span>
+          </div>
+          <p class="text-xs sm:text-sm text-white/65 max-w-sm leading-relaxed">
+            “We’ll Do Things The Right Way, Not The Easy Way®” — Providing 24/7 Air Conditioning, Heating, Plumbing, and Clean Water solutions across <span data-bind="city">Austin, TX</span> since <span data-bind="since">1939</span>.
+          </p>
+          <div class="text-xs font-bold text-white">
+            <span data-bind="address">3600 Silver Dollar Circle</span> · <span data-bind="city">Austin, TX</span> · <span data-bind="phone">(512) 253-7075</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 space-y-2 text-xs font-semibold">
+          <div class="font-display font-extrabold text-white uppercase tracking-wider mb-3">OUR SERVICES</div>
+          <div><a href="#services" onclick="switchServiceTab('ac')" class="hover:text-white">24/7 AC Repair &amp; Install</a></div>
+          <div><a href="#services" onclick="switchServiceTab('ac')" class="hover:text-white">AC Rejuuuvenation® Tune-Up</a></div>
+          <div><a href="#services" onclick="switchServiceTab('heating')" class="hover:text-white">Heating &amp; Furnace Repair</a></div>
+          <div><a href="#services" onclick="switchServiceTab('plumbing')" class="hover:text-white">Emergency Plumbing &amp; Drains</a></div>
+          <div><a href="#services" onclick="switchServiceTab('water')" class="hover:text-white">Water Softeners &amp; Filtration</a></div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-3">
+          <div class="font-display font-extrabold text-xs text-white uppercase tracking-wider">NEED 24/7 EMERGENCY SERVICE?</div>
+          <a href="tel:5122537075" data-bind-href="phoneTel" class="block font-display font-black text-3xl text-goettl-crimson hover:underline" data-bind="phone">(512) 253-7075</a>
+          <p class="text-xs text-white/60" data-bind="license">HVAC: TACLA115088C · Plumbing: M-41195</p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <div>© <span id="currentYear">2026</span> <span data-bind="companyName">Goettl</span> Air Conditioning &amp; Plumbing. All Rights Reserved.</div>
+        <div>100% SATISFACTION GUARANTEE · <span data-bind="cityUpper">AUSTIN, TX</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MOBILE STICKY ACTION BAR
+       ======================================================================== -->
+  <div class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-goettl-charcoal border-t border-white/15 p-2.5 grid grid-cols-2 gap-2">
+    <a href="tel:5122537075" data-bind-href="phoneTel" class="py-3 bg-goettl-graphite border border-white/20 text-white font-display font-extrabold text-xs uppercase tracking-wider rounded text-center">
+      Call <span data-bind="phone">(512) 253-7075</span>
+    </a>
+    <button onclick="openBookingModal('Mobile Sticky Bar Book Online')" class="py-3 bg-goettl-red text-white font-display font-extrabold text-xs uppercase tracking-wider rounded text-center">
+      Book Online →
+    </button>
+  </div>
+
+  <!-- ========================================================================
+       INTERACTIVE 24/7 ONLINE DISPATCH & COUPON CLAIM MODAL
+       ======================================================================== -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-goettl-charcoal/80 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl border-2 border-goettl-red max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeBookingModal()" aria-label="Close Modal" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-goettl-stone hover:bg-goettl-red hover:text-white font-bold text-xs flex items-center justify-center">✕</button>
+
+      <div id="bookingFormContainer">
+        <div class="inline-flex items-center gap-1.5 bg-goettl-softRed text-goettl-red px-2.5 py-1 rounded font-display font-extrabold text-[10px] uppercase tracking-wider mb-2">
+          <span>● 24/7 PRIORITY DISPATCH DESK</span>
+        </div>
+        <h3 class="font-display font-black text-2xl text-goettl-charcoal">Schedule Service or Claim Offer</h3>
+        <p class="text-xs font-semibold text-gray-500 mt-1 mb-5">
+          SELECTED: <strong class="text-goettl-red" id="bookingModalTopic">24/7 Priority Online Dispatch</strong>
+        </p>
+
+        <form onsubmit="submitBookingModal(event)" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">Homeowner Name *</label>
+              <input type="text" required placeholder="Full Name" class="w-full px-3.5 py-2.5 bg-goettl-stone border border-gray-300 rounded-md text-sm focus:outline-none focus:border-goettl-red" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">Mobile Phone *</label>
+              <input type="tel" required placeholder="(512) 555-0199" class="w-full px-3.5 py-2.5 bg-goettl-stone border border-gray-300 rounded-md text-sm focus:outline-none focus:border-goettl-red" />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">Service Category *</label>
+              <select class="w-full px-3.5 py-2.5 bg-goettl-stone border border-gray-300 rounded-md text-sm focus:outline-none focus:border-goettl-red">
+                <option>Air Conditioning Repair / Tune-Up</option>
+                <option>New High-Efficiency AC Quote</option>
+                <option>Plumbing / Tankless Water Heater</option>
+                <option>Clean Water / Softener Test</option>
+                <option>Heating / Furnace Service</option>
+                <option>Smart Sadie® Plan Enrollment</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">ZIP Code or City *</label>
+              <input type="text" required placeholder="e.g. 78701 / Austin" class="w-full px-3.5 py-2.5 bg-goettl-stone border border-gray-300 rounded-md text-sm focus:outline-none focus:border-goettl-red" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">How Can We Help Today?</label>
+            <textarea rows="2" placeholder="Describe the issue or promo offer you'd like to apply..." class="w-full px-3.5 py-2 bg-goettl-stone border border-gray-300 rounded-md text-sm focus:outline-none focus:border-goettl-red"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 bg-goettl-red hover:bg-goettl-darkRed text-white font-display font-extrabold text-xs uppercase tracking-wider rounded-md shadow-crimson transition-colors">
+            Confirm Same-Day Dispatch Request →
+          </button>
+        </form>
+      </div>
+
+      <div id="bookingSuccessContainer" class="hidden py-8 text-center space-y-4">
+        <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-xl">✓</div>
+        <h4 class="font-display font-black text-2xl text-goettl-charcoal">Dispatch Confirmed!</h4>
+        <p class="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
+          Thank you! Our local <span data-bind="city">Austin, TX</span> coordinator at <strong data-bind="companyName">Goettl</strong> will call or text you within 10 minutes to lock in your arrival window.
+        </p>
+        <button onclick="closeBookingModal()" class="px-6 py-2.5 bg-goettl-charcoal text-white font-display font-bold text-xs uppercase rounded">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       WHITE-LABEL 1-CLICK PROSPECT REBRAND ENGINE (Bottom-Left Floating Pill)
+       ======================================================================== -->
+  <div id="rebrandWidget" class="fixed bottom-20 lg:bottom-4 left-4 z-50">
+    <button onclick="toggleRebrandDrawer()" class="bg-goettl-charcoal hover:bg-goettl-graphite text-white font-display font-extrabold text-[11px] uppercase tracking-wider px-4 py-2.5 rounded-full shadow-2xl border border-white/20 flex items-center gap-2">
+      <span class="text-goettl-crimson">⚙</span>
+      <span>Rebrand Prospect</span>
+    </button>
+
+    <div id="rebrandDrawer" class="hidden mt-2 w-80 sm:w-96 bg-goettl-charcoal text-white border border-white/20 rounded-2xl p-5 shadow-2xl space-y-3">
+      <div class="flex items-center justify-between border-b border-white/15 pb-2.5">
+        <div>
+          <span class="font-display font-extrabold text-[9px] uppercase tracking-widest text-goettl-crimson block">GOETTL 1:1 WHITE-LABEL STUDIO</span>
+          <h4 class="font-display font-black text-base text-white">Customize For Any Prospect</h4>
+        </div>
+        <button onclick="toggleRebrandDrawer()" class="text-xs text-white/60 hover:text-white font-bold">✕</button>
+      </div>
+
+      <div class="space-y-2.5 text-xs">
+        <div>
+          <label class="block text-[10px] font-bold uppercase text-white/60 mb-1">Company Name</label>
+          <input type="text" id="inpCompany" oninput="updateLiveBrandConfig()" class="w-full px-2.5 py-1.5 bg-goettl-graphite border border-white/20 rounded text-white focus:outline-none focus:border-goettl-crimson" />
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-white/60 mb-1">City &amp; State</label>
+            <input type="text" id="inpCity" oninput="updateLiveBrandConfig()" class="w-full px-2.5 py-1.5 bg-goettl-graphite border border-white/20 rounded text-white focus:outline-none focus:border-goettl-crimson" />
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-white/60 mb-1">Phone Number</label>
+            <input type="text" id="inpPhone" oninput="updateLiveBrandConfig()" class="w-full px-2.5 py-1.5 bg-goettl-graphite border border-white/20 rounded text-white focus:outline-none focus:border-goettl-crimson" />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-white/60 mb-1">Branch Manager</label>
+            <input type="text" id="inpManager" oninput="updateLiveBrandConfig()" class="w-full px-2.5 py-1.5 bg-goettl-graphite border border-white/20 rounded text-white focus:outline-none focus:border-goettl-crimson" />
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-white/60 mb-1">Membership Name</label>
+            <input type="text" id="inpPlan" oninput="updateLiveBrandConfig()" class="w-full px-2.5 py-1.5 bg-goettl-graphite border border-white/20 rounded text-white focus:outline-none focus:border-goettl-crimson" />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-white/60 mb-1">Branch Address</label>
+            <input type="text" id="inpAddress" oninput="updateLiveBrandConfig()" class="w-full px-2.5 py-1.5 bg-goettl-graphite border border-white/20 rounded text-white focus:outline-none focus:border-goettl-crimson" />
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-white/60 mb-1">Founded Year</label>
+            <input type="text" id="inpSince" oninput="updateLiveBrandConfig()" class="w-full px-2.5 py-1.5 bg-goettl-graphite border border-white/20 rounded text-white focus:outline-none focus:border-goettl-crimson" />
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-2 border-t border-white/15 flex items-center gap-2">
+        <button onclick="copyProspectUrl()" id="btnCopyShareUrl" class="flex-1 py-2.5 px-3 bg-goettl-red hover:bg-goettl-crimson text-white font-display font-extrabold text-[11px] uppercase tracking-wider rounded">
+          📋 Copy Prospect Share URL
+        </button>
+        <button onclick="hideRebrandWidget()" class="py-2.5 px-3 bg-goettl-graphite hover:bg-white/10 border border-white/15 text-white/75 font-bold text-[10px] uppercase rounded">
+          Hide Tool
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       JAVASCRIPT: BRAND_CONFIG, 4-PILLAR TABS, COUPONS & FINANCING CALCULATOR
+       ======================================================================== -->
+  <script>
+    // ------------------------------------------------------------------------
+    // 1. CENTRAL WHITE-LABEL CONFIGURATION (Defaults to Goettl Austin, TX)
+    // ------------------------------------------------------------------------
+    const BRAND_CONFIG = {
+      companyName: "Goettl",
+      city: "Austin, TX",
+      region: "Surrounding Hill Country",
+      phone: "(512) 253-7075",
+      address: "3600 Silver Dollar Circle",
+      manager: "Garrett Hollis",
+      since: "1939",
+      planName: "Smart Sadie®",
+      license: "HVAC: TACLA115088C · Plumbing: M-41195"
+    };
+
+    function loadQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('name')) BRAND_CONFIG.companyName = params.get('name');
+      if (params.get('city')) BRAND_CONFIG.city = params.get('city');
+      if (params.get('region')) BRAND_CONFIG.region = params.get('region');
+      if (params.get('phone')) BRAND_CONFIG.phone = params.get('phone');
+      if (params.get('address')) BRAND_CONFIG.address = params.get('address');
+      if (params.get('manager')) BRAND_CONFIG.manager = params.get('manager');
+      if (params.get('since')) BRAND_CONFIG.since = params.get('since');
+      if (params.get('plan')) BRAND_CONFIG.planName = params.get('plan');
+      if (params.get('preview') === 'false') hideRebrandWidget();
+    }
+
+    function applyBrandConfigToDOM() {
+      const cityShort = BRAND_CONFIG.city.split(',')[0].trim();
+      document.title = `${BRAND_CONFIG.companyName} Air Conditioning & Plumbing | ${BRAND_CONFIG.city} 24/7 Service`;
+
+      const map = {
+        ...BRAND_CONFIG,
+        cityShort: cityShort,
+        cityUpper: BRAND_CONFIG.city.toUpperCase()
+      };
+
+      document.querySelectorAll('[data-bind]').forEach(el => {
+        const key = el.getAttribute('data-bind');
+        if (map[key] !== undefined) el.textContent = map[key];
+      });
+
+      const telClean = BRAND_CONFIG.phone.replace(/[^0-9+]/g, '');
+      document.querySelectorAll('[data-bind-href="phoneTel"]').forEach(el => {
+        el.setAttribute('href', `tel:${telClean}`);
+      });
+
+      const inpCompany = document.getElementById('inpCompany');
+      if (inpCompany && document.activeElement !== inpCompany) {
+        inpCompany.value = BRAND_CONFIG.companyName;
+        document.getElementById('inpCity').value = BRAND_CONFIG.city;
+        document.getElementById('inpPhone').value = BRAND_CONFIG.phone;
+        document.getElementById('inpManager').value = BRAND_CONFIG.manager;
+        document.getElementById('inpPlan').value = BRAND_CONFIG.planName;
+        document.getElementById('inpAddress').value = BRAND_CONFIG.address;
+        document.getElementById('inpSince').value = BRAND_CONFIG.since;
+      }
+    }
+
+    // ------------------------------------------------------------------------
+    // 2. INTERACTIVE 4-PILLAR SERVICE MATRIX DATA & TAB SWITCHER
+    // ------------------------------------------------------------------------
+    const SERVICE_PILLARS = {
+      ac: {
+        badge: "24/7 COOLING & HIGH-EFFICIENCY AC SPECIALISTS",
+        headline: () => `Beat the Triple-Digit ${BRAND_CONFIG.city.split(',')[0]} Summer Heat`,
+        description: () => `When summer temperatures soar past 100°F across ${BRAND_CONFIG.city}, your air conditioner works overtime. Whether you need a 24/7 emergency repair, our exclusive 6-step AC Rejuuuvenation®, or a high-efficiency inverter replacement, ${BRAND_CONFIG.companyName} does it the right way.`,
+        ctaText: "Book Air Conditioning Service →",
+        image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80",
+        calloutTitle: "EXCLUSIVE $129 AC REJUUUVENATION®",
+        calloutCopy: "Our signature 6-step deep chemical coil cleaning & precision calibration service to extend unit lifespan and cut electric bills.",
+        subItems: [
+          { title: "24/7 Emergency AC Repair", desc: "Stocked trucks ready day or night for compressor, capacitor & refrigerant failures." },
+          { title: "AC Rejuuuvenation® ($129)", desc: "Exclusive 6-step deep calibration & coil washing to restore factory efficiency." },
+          { title: "High-Efficiency AC Replacement", desc: "Variable-speed inverter systems with up to $2,200 in rebates & $99/mo financing." },
+          { title: "Ductless Mini-Splits & Air Quality", desc: "Pinpoint room cooling, HEPA filtration, and UV germicidal air scrubbers." }
+        ]
+      },
+      heating: {
+        badge: "WINTER FREEZE PROTECTION & HEATING AUTHORITY",
+        headline: () => `Stay Safe & Warm Through Sudden ${BRAND_CONFIG.city.split(',')[0]} Cold Snaps`,
+        description: () => `Winter freezes can strike fast. Our state-certified heating technicians perform carbon monoxide safety inspections, emergency furnace repairs, and cold-climate heat pump installations.`,
+        ctaText: "Book Heating & Furnace Service →",
+        image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&q=80",
+        calloutTitle: "COMPLETE FURNACE SAFETY & CO CHECK",
+        calloutCopy: "Every heating service includes heat exchanger inspection, ignition calibration, and safety limit verification.",
+        subItems: [
+          { title: "24/7 Emergency Furnace Repair", desc: "Fast diagnosis and OEM parts for gas furnaces, ignitors, and blower motors." },
+          { title: "High-Efficiency Heat Pumps", desc: "All-electric heating and cooling engineered for maximum year-round efficiency." },
+          { title: "Heating Rejuuuvenation® Tune-Up", desc: "Comprehensive pre-winter safety check and burner optimization." },
+          { title: "Smart Thermostat Integration", desc: "Wi-Fi zoning and Smart Sadie® sensor pairing for effortless comfort." }
+        ]
+      },
+      plumbing: {
+        badge: "LICENSED MASTER PLUMBERS & DRAIN EXPERTS",
+        headline: () => `24/7 Emergency Plumbing & Tankless Water Heaters (~$5/Day)`,
+        description: () => `From slab leaks and backed-up main sewer lines to endless hot water with a new tankless water heater for ~$5/day, our licensed ${BRAND_CONFIG.city} plumbers arrive in fully stocked trucks ready to solve the problem on the first visit.`,
+        ctaText: "Book Plumbing or Drain Service →",
+        image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=900&q=80",
+        calloutTitle: "TANKLESS WATER HEATERS FOR ~$5/DAY",
+        calloutCopy: "Enjoy endless hot water, reclaim closet space, and protect your home from catastrophic tank ruptures.",
+        subItems: [
+          { title: "Tankless & Standard Water Heaters", desc: "Same-day water heater replacement or repair—upgrade to tankless for ~$5/day." },
+          { title: "Sewer & Drain Hydro-Jetting", desc: "HD video camera inspection and high-pressure clearing for stubborn roots & clogs." },
+          { title: "24/7 Emergency Leak & Pipe Repair", desc: "Electronic slab leak detection, pressure regulators, and whole-home repiping." },
+          { title: "Kitchen & Bath Fixture Upgrades", desc: "Precision installation of toilets, disposals, shut-off valves, and faucets." }
+        ]
+      },
+      water: {
+        badge: "HILL COUNTRY HARD WATER & FILTRATION SPECIALISTS",
+        headline: () => `Eliminate Hard Water Scale & Chlorine in ${BRAND_CONFIG.city}`,
+        description: () => `Hard water mineral buildup silently destroys water heaters, dishwashers, and faucets while drying out skin and hair. We provide complimentary TDS water quality testing and hospital-grade whole-home water softeners.`,
+        ctaText: "Schedule Free Water Quality Test →",
+        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=900&q=80",
+        calloutTitle: "COMPLIMENTARY IN-HOME WATER TEST",
+        calloutCopy: "Our technician measures exact grains of hardness, TDS, and chlorine levels right at your kitchen sink.",
+        subItems: [
+          { title: "Whole-Home Water Softeners", desc: "Stop calcium scale buildup in pipes, tankless heaters, and glass shower doors." },
+          { title: "Whole-House Carbon Filtration", desc: "Remove chlorine taste, odor, chloramines, and sediment from every tap." },
+          { title: "Reverse Osmosis Drinking Systems", desc: "Bottled-water purity right at your kitchen sink with remineralization stages." },
+          { title: "Free TDS & Hardness Water Test", desc: "Instant 10-minute water diagnostic included free with any service visit." }
+        ]
+      }
+    };
+
+    let currentActiveTab = 'ac';
+
+    function switchServiceTab(tabKey) {
+      currentActiveTab = tabKey;
+      const data = SERVICE_PILLARS[tabKey];
+      if (!data) return;
+
+      ['ac', 'heating', 'plumbing', 'water'].forEach(k => {
+        const btn = document.getElementById(`tabBtn-${k}`);
+        if (k === tabKey) {
+          btn.className = "p-4 sm:p-5 rounded-xl font-display font-extrabold text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2.5 bg-goettl-red text-white shadow-crimson transition-all";
+        } else {
+          btn.className = "p-4 sm:p-5 rounded-xl font-display font-extrabold text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2.5 bg-white hover:bg-gray-100 text-goettl-charcoal border border-gray-200 transition-all";
+        }
+      });
+
+      document.getElementById('serviceTabBadge').textContent = data.badge;
+      document.getElementById('serviceTabHeadline').textContent = data.headline();
+      document.getElementById('serviceTabDescription').textContent = data.description();
+      document.getElementById('serviceTabImage').src = data.image;
+      document.getElementById('serviceTabCalloutTitle').textContent = data.calloutTitle;
+      document.getElementById('serviceTabCalloutCopy').textContent = data.calloutCopy;
+
+      const ctaBtn = document.getElementById('serviceTabPrimaryCta');
+      ctaBtn.textContent = data.ctaText;
+      ctaBtn.setAttribute('onclick', `openBookingModal('${data.ctaText.replace(' →', '')}')`);
+
+      const listContainer = document.getElementById('serviceSubList');
+      listContainer.innerHTML = data.subItems.map(item => `
+        <div onclick="openBookingModal('${item.title}')" class="cursor-pointer group bg-goettl-stone hover:bg-goettl-softRed border border-gray-200 hover:border-goettl-red p-4 rounded-xl transition-all">
+          <div class="flex items-center justify-between font-display font-extrabold text-sm text-goettl-charcoal group-hover:text-goettl-red">
+            <span>${item.title}</span>
+            <span>→</span>
+          </div>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed">${item.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    // ------------------------------------------------------------------------
+    // 3. PROMO COUPONS FILTER
+    // ------------------------------------------------------------------------
+    function filterPromos(category, btnEl) {
+      document.querySelectorAll('#promoFilterTabs .promo-tab').forEach(b => {
+        b.className = "promo-tab bg-goettl-stone hover:bg-gray-200 text-goettl-charcoal font-display font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-md transition-colors";
+      });
+      btnEl.className = "promo-tab bg-goettl-red text-white font-display font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-md transition-colors";
+
+      document.querySelectorAll('#promoCardsGrid .promo-card').forEach(card => {
+        const cats = card.getAttribute('data-promo-cat') || '';
+        if (category === 'all' || cats.includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // ------------------------------------------------------------------------
+    // 4. INTERACTIVE MONTHLY FINANCING CALCULATOR
+    // ------------------------------------------------------------------------
+    function updateFinanceCalculator(amountVal) {
+      const amt = parseInt(amountVal, 10);
+      document.getElementById('financeProjectDisplay').textContent = `$${amt.toLocaleString()}`;
+
+      // Approximate 132-month promotional financing factor (~1.042% of principal/mo)
+      const monthly = Math.round(amt * 0.01042);
+      const daily = (monthly / 30).toFixed(2);
+
+      document.getElementById('financeMonthlyDisplay').textContent = monthly;
+      document.getElementById('financeDailyDisplay').textContent = daily;
+
+      const labelEl = document.getElementById('financeSystemTypeLabel');
+      if (amt <= 5000) {
+        labelEl.textContent = "Tankless Water Heater or Whole-Home Filtration";
+      } else if (amt <= 12500) {
+        labelEl.textContent = "Complete High-SEER2 Central AC & Heating System";
+      } else {
+        labelEl.textContent = "Variable-Speed Inverter System + Ductwork Upgrade";
+      }
+    }
+
+    // ------------------------------------------------------------------------
+    // 5. MODALS, NAVIGATION & WHITE-LABEL PROSPECT STUDIO
+    // ------------------------------------------------------------------------
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenuDrawer').classList.toggle('hidden');
+      document.getElementById('menuIconOpen').classList.toggle('hidden');
+      document.getElementById('menuIconClose').classList.toggle('hidden');
+    }
+
+    function openBookingModal(topic) {
+      document.getElementById('bookingModalTopic').textContent = topic || '24/7 Priority Online Dispatch';
+      document.getElementById('bookingFormContainer').classList.remove('hidden');
+      document.getElementById('bookingSuccessContainer').classList.add('hidden');
+      const modal = document.getElementById('bookingModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function submitBookingModal(e) {
+      e.preventDefault();
+      document.getElementById('bookingFormContainer').classList.add('hidden');
+      document.getElementById('bookingSuccessContainer').classList.remove('hidden');
+    }
+
+    function toggleRebrandDrawer() {
+      document.getElementById('rebrandDrawer').classList.toggle('hidden');
+    }
+
+    function updateLiveBrandConfig() {
+      BRAND_CONFIG.companyName = document.getElementById('inpCompany').value || 'Goettl';
+      BRAND_CONFIG.city = document.getElementById('inpCity').value || 'Austin, TX';
+      BRAND_CONFIG.phone = document.getElementById('inpPhone').value || '(512) 253-7075';
+      BRAND_CONFIG.manager = document.getElementById('inpManager').value || 'Garrett Hollis';
+      BRAND_CONFIG.planName = document.getElementById('inpPlan').value || 'Smart Sadie®';
+      BRAND_CONFIG.address = document.getElementById('inpAddress').value || '3600 Silver Dollar Circle';
+      BRAND_CONFIG.since = document.getElementById('inpSince').value || '1939';
+      applyBrandConfigToDOM();
+      switchServiceTab(currentActiveTab);
+    }
+
+    function copyProspectUrl() {
+      const url = new URL(window.location.href);
+      url.searchParams.set('name', BRAND_CONFIG.companyName);
+      url.searchParams.set('city', BRAND_CONFIG.city);
+      url.searchParams.set('phone', BRAND_CONFIG.phone);
+      url.searchParams.set('manager', BRAND_CONFIG.manager);
+      url.searchParams.set('plan', BRAND_CONFIG.planName);
+      url.searchParams.set('address', BRAND_CONFIG.address);
+      url.searchParams.set('since', BRAND_CONFIG.since);
+
+      const tempInput = document.createElement('input');
+      tempInput.value = url.toString();
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      const btn = document.getElementById('btnCopyShareUrl');
+      const orig = btn.textContent;
+      btn.textContent = "✓ Prospect Share URL Copied!";
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    }
+
+    function hideRebrandWidget() {
+      const w = document.getElementById('rebrandWidget');
+      if (w) w.style.display = 'none';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      loadQueryParams();
+      applyBrandConfigToDOM();
+      switchServiceTab('ac');
+    });
+  </script>
+</body>
+</html>

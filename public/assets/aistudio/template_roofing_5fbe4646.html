@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-brand-title>Houston Roofing | Expert Roof Replacement & Repairs</title>
+  <meta name="description" content="Roof replacement, repairs, inspections, and siding from a local team that shows you what your roof actually needs, then does the work right." />
+
+  <!-- Preconnect & Fast Google Fonts (Plus Jakarta Sans + Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. REBRAND DESIGN TOKENS (Change colors here or via URL params)
+       ========================================================================== */
+    :root {
+      --brand-primary: #0F2537;       /* Deep Architectural Navy / Slate */
+      --brand-primary-dark: #081520;  /* Darkest Header/Footer Navy */
+      --brand-accent: #C8202F;        /* Crimson Roofing CTA Accent */
+      --brand-accent-hover: #A31623;  /* Hover State Crimson */
+      --brand-gold: #F59E0B;          /* 5-Star Rating Gold */
+      --bg-light: #F8FAFC;            /* Section Contrast Surface */
+      --bg-white: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --border-subtle: #E2E8F0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-card: 0 10px 30px -5px rgba(15, 37, 55, 0.07), 0 4px 12px -2px rgba(15, 37, 55, 0.04);
+      --shadow-elevated: 0 20px 40px -10px rgba(15, 37, 55, 0.18);
+      --container-max: 1280px;
+    }
+
+    /* ==========================================================================
+       2. RESET & BASE PERFORMANCE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--brand-accent);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      z-index: 9999;
+      border-radius: var(--radius-sm);
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ==========================================================================
+       3. BUTTONS & UI COMPONENTS
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .btn-accent {
+      background-color: var(--brand-accent);
+      color: #FFFFFF;
+    }
+    .btn-accent:hover {
+      background-color: var(--brand-accent-hover);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background-color: var(--brand-primary);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background-color: var(--brand-primary-dark);
+      transform: translateY(-1px);
+    }
+    .btn-outline-white {
+      border-color: rgba(255,255,255,0.35);
+      color: #FFFFFF;
+      background: rgba(255,255,255,0.06);
+    }
+    .btn-outline-white:hover {
+      background: #FFFFFF;
+      color: var(--brand-primary);
+    }
+    .btn-outline-dark {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      background: transparent;
+    }
+    .btn-outline-dark:hover {
+      background: var(--brand-primary);
+      color: #FFFFFF;
+    }
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-accent);
+      margin-bottom: 0.65rem;
+    }
+
+    /* ==========================================================================
+       4. TOP UTILITY BAR & STICKY MEGA-HEADER
+       ========================================================================== */
+    .utility-bar {
+      background-color: var(--brand-primary-dark);
+      color: #CBD5E1;
+      font-size: 0.82rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .utility-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .utility-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .utility-links a:hover {
+      color: #FFFFFF;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--bg-white);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 82px;
+      gap: 1rem;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--brand-primary);
+      line-height: 1.1;
+    }
+    .brand-logo svg {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+    }
+    .brand-logo-sub {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand-accent);
+      margin-top: 2px;
+    }
+
+    /* Desktop Navigation with Hover Dropdowns */
+    .main-nav {
+      display: none;
+    }
+    @media (min-width: 1120px) {
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      border-radius: var(--radius-sm);
+    }
+    .nav-link:hover {
+      color: var(--brand-accent);
+      background-color: var(--bg-light);
+    }
+    .nav-link svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.65;
+      transition: transform 0.2s ease;
+    }
+    .nav-item:hover .nav-link svg {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 250px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-elevated);
+      padding: 0.6rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.18s ease;
+      z-index: 1100;
+    }
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--text-main);
+      border-radius: var(--radius-sm);
+    }
+    .dropdown-menu a:hover {
+      background: var(--bg-light);
+      color: var(--brand-accent);
+      padding-left: 1.05rem;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .header-phone {
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      line-height: 1.2;
+    }
+    @media (min-width: 640px) {
+      .header-phone {
+        display: flex;
+      }
+    }
+    .header-phone-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .header-phone-number {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+    }
+    .mobile-menu-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      color: var(--brand-primary);
+    }
+    @media (min-width: 1120px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      background: var(--bg-white);
+      border-bottom: 2px solid var(--border-subtle);
+      padding: 1.25rem;
+      max-height: calc(100vh - 82px);
+      overflow-y: auto;
+    }
+    .mobile-drawer.open {
+      display: block;
+    }
+    .mobile-nav-list li {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .mobile-nav-list a {
+      display: block;
+      padding: 0.85rem 0;
+      font-weight: 700;
+      color: var(--brand-primary);
+    }
+
+    /* ==========================================================================
+       5. SPLIT HERO SECTION & CONSULTATION FORM
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      background-color: var(--brand-primary-dark);
+      background-image: 
+        linear-gradient(105deg, rgba(8, 21, 32, 0.92) 0%, rgba(15, 37, 55, 0.84) 55%, rgba(15, 37, 55, 0.65) 100%),
+        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #FFFFFF;
+      padding: 4rem 0 5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 3.5rem;
+      }
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #F8FAFC;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title {
+      font-size: clamp(2.1rem, 4.2vw, 3.35rem);
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      color: #FFFFFF;
+    }
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+      color: #E2E8F0;
+      margin-bottom: 1.75rem;
+      max-width: 620px;
+    }
+    .google-rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--text-main);
+      padding: 0.65rem 1.15rem;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.92rem;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 2rem;
+    }
+    .stars {
+      color: var(--brand-gold);
+      display: inline-flex;
+      gap: 2px;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Hero Lead Capture Card */
+    .lead-card {
+      background: var(--bg-white);
+      color: var(--text-main);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-elevated);
+      border-top: 5px solid var(--brand-accent);
+    }
+    .lead-card-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin-bottom: 0.35rem;
+      text-align: center;
+    }
+    .lead-card-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 1.4rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+    .form-full {
+      grid-column: 1 / -1;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.78rem 0.9rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      border: 1px solid #CBD5E1;
+      border-radius: var(--radius-sm);
+      background: #F8FAFC;
+      color: var(--text-main);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--brand-primary);
+      background: #FFFFFF;
+    }
+    .tcpa-disclaimer {
+      font-size: 0.7rem;
+      line-height: 1.45;
+      color: #64748B;
+      margin: 0.85rem 0 1rem;
+    }
+    .form-submit-btn {
+      width: 100%;
+      font-size: 1.05rem;
+      padding: 0.95rem;
+    }
+
+    /* ==========================================================================
+       6. TRUST & MANUFACTURER CERTIFICATION STRIP
+       ========================================================================== */
+    .trust-strip {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1.75rem 0;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      align-items: center;
+    }
+    @media (min-width: 640px) {
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .trust-grid {
+        grid-template-columns: repeat(7, 1fr);
+      }
+    }
+    .trust-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.75rem 0.5rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background: var(--bg-light);
+      min-height: 82px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .trust-badge:hover {
+      transform: translateY(-2px);
+      border-color: var(--brand-primary);
+    }
+    .trust-badge-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: var(--brand-primary);
+      letter-spacing: -0.01em;
+    }
+    .trust-badge-sub {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       7. SERVICES 4-CARD ARCHITECTURAL GRID
+       ========================================================================== */
+    .section-pad {
+      padding: 5rem 0;
+    }
+    .section-header {
+      max-width: 780px;
+      margin: 0 auto 3.25rem;
+      text-align: center;
+    }
+    .section-title {
+      font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+      color: var(--brand-primary);
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .service-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+    }
+    .service-img-wrap {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: var(--brand-primary);
+    }
+    .service-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover .service-img-wrap img {
+      transform: scale(1.04);
+    }
+    .service-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .service-title {
+      font-size: 1.4rem;
+      color: var(--brand-primary);
+      margin-bottom: 0.65rem;
+    }
+    .service-text {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .service-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .service-link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--brand-accent);
+      background: #FEF2F2;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+    }
+    .service-link-pill:hover {
+      background: var(--brand-accent);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       8. "BUILT AROUND THE RIGHT ROOF" SPLIT STORY & 3 PILLARS
+       ========================================================================== */
+    .story-section {
+      background-color: var(--bg-light);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 992px) {
+      .story-grid {
+        grid-template-columns: 1fr 1.1fr;
+      }
+    }
+    .story-image-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-elevated);
+    }
+    .story-image-badge {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      right: 1.25rem;
+      background: rgba(15, 37, 55, 0.94);
+      backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--brand-accent);
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .pillars-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .pillar-box {
+      background: var(--bg-white);
+      padding: 1.35rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+    }
+    .pillar-box h4 {
+      font-size: 1.02rem;
+      color: var(--brand-primary);
+      margin-bottom: 0.45rem;
+    }
+    .pillar-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       9. 3-STEP PROCESS BANNER
+       ========================================================================== */
+    .process-banner {
+      background: var(--brand-primary);
+      color: #FFFFFF;
+      padding: 4.5rem 0;
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    @media (min-width: 768px) {
+      .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .process-step-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .step-number {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--brand-accent);
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       10. WARRANTY EXPECTATIONS VS. REALITY COMPARISON TABLE
+       ========================================================================== */
+    .warranty-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 992px) {
+      .warranty-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+    .comparison-table-wrap {
+      margin: 1.75rem 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .comparison-table th {
+      background: var(--brand-primary);
+      color: #FFFFFF;
+      padding: 1rem 1.25rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+    .comparison-table th:last-child {
+      background: var(--brand-accent);
+    }
+    .comparison-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+    }
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table td:first-child {
+      font-weight: 700;
+      color: var(--text-muted);
+      background: #F8FAFC;
+      width: 42%;
+    }
+    .comparison-table td:last-child {
+      font-weight: 600;
+      color: var(--brand-primary);
+      background: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       11. 01 - 06 WHY CHOOSE US NUMBERED VALUE GRID
+       ========================================================================== */
+    .why-section {
+      background: var(--bg-light);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    @media (min-width: 768px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .why-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .why-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: rgba(200, 32, 47, 0.18);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .why-title {
+      font-size: 1.22rem;
+      color: var(--brand-primary);
+      margin-bottom: 0.75rem;
+    }
+    .why-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+    .why-bullets {
+      margin-bottom: 1.25rem;
+      padding-left: 1rem;
+    }
+    .why-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      position: relative;
+    }
+    .why-bullets li::before {
+      content: "•";
+      color: var(--brand-accent);
+      font-weight: bold;
+      position: absolute;
+      left: -1rem;
+    }
+    .why-link {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--brand-accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .why-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       12. GOOGLE REVIEWS & SOCIAL PROOF SECTION
+       ========================================================================== */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .review-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .review-quote {
+      font-size: 0.94rem;
+      color: var(--text-main);
+      font-style: italic;
+      margin: 1rem 0 1.5rem;
+    }
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem;
+    }
+    .reviewer-name {
+      font-weight: 800;
+      color: var(--brand-primary);
+      font-size: 0.95rem;
+    }
+    .reviewer-source {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .reviews-summary-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 2rem;
+    }
+
+    /* ==========================================================================
+       13. TABBED BLOG & CASE STUDIES SECTION
+       ========================================================================== */
+    .blog-section {
+      background: var(--bg-light);
+    }
+    .tabs-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 0.65rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-white);
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--brand-primary);
+      color: #FFFFFF;
+      border-color: var(--brand-primary);
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    @media (min-width: 768px) {
+      .articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .article-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+    }
+    .article-img {
+      height: 195px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .article-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .article-title {
+      font-size: 1.12rem;
+      color: var(--brand-primary);
+      margin-bottom: 0.65rem;
+    }
+    .article-excerpt {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    /* ==========================================================================
+       14. SERVICE AREAS PILL MATRIX
+       ========================================================================== */
+    .areas-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    @media (min-width: 992px) {
+      .areas-grid {
+        grid-template-columns: 1.3fr 0.7fr;
+      }
+    }
+    .city-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1.5rem;
+    }
+    .city-pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border-subtle);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--brand-primary);
+    }
+    .city-pill:hover {
+      background: var(--brand-primary);
+      color: #FFFFFF;
+      border-color: var(--brand-primary);
+    }
+    .city-pill.highlight {
+      background: var(--brand-accent);
+      color: #FFFFFF;
+      border-color: var(--brand-accent);
+    }
+    .map-card {
+      background: var(--brand-primary-dark);
+      color: #FFFFFF;
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-elevated);
+    }
+
+    /* ==========================================================================
+       15. ARCHITECTURAL FOOTER & STICKY MOBILE BAR
+       ========================================================================== */
+    .site-footer {
+      background: var(--brand-primary-dark);
+      color: #CBD5E1;
+      padding: 4.5rem 0 2.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+      }
+    }
+    .footer-heading {
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      margin-bottom: 1.1rem;
+    }
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+    .footer-links a:hover {
+      color: #FFFFFF;
+      padding-left: 4px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.84rem;
+    }
+
+    /* Sticky Mobile Call/Quote Bar */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-subtle);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      padding: 0.6rem 0.75rem;
+      z-index: 999;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+    }
+    @media (min-width: 768px) {
+      .mobile-sticky-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- ========================================================================
+       TOP UTILITY BAR
+       ======================================================================== -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <div>
+        <span>Locally Owned &amp; Operated Since <strong data-brand="foundedYear">2009</strong> · <span data-brand="license">RCAT Licensed #01-0476 E</span></span>
+      </div>
+      <div class="utility-links">
+        <a href="#service-areas">View Our Service Areas</a>
+        <a href="#consultation-form">Get Your Free Instant Quote</a>
+        <a href="#warranty-section">Financing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#footer-contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       STICKY HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 4L4 20H10V42H38V20H44L24 4Z" fill="var(--brand-primary)"/>
+          <path d="M24 11L9 23H14V38H34V23H39L24 11Z" fill="var(--brand-accent)"/>
+          <path d="M20 27H28V38H20V27Z" fill="#FFFFFF"/>
+        </svg>
+        <div>
+          <span data-brand="companyShort">Houston Roofing</span>
+          <span class="brand-logo-sub" data-brand="companySub">&amp; Construction</span>
+        </div>
+      </a>
+
+      <!-- Desktop Mega Dropdown Navigation -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="#services" class="nav-link">
+            Roof Replacement
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#services">Roof Replacement Overview</a>
+            <a href="#services">Asphalt Roof Replacement</a>
+            <a href="#services">Metal Roof Replacement</a>
+            <a href="#consultation-form">Free Roof Inspection</a>
+            <a href="#consultation-form">Free Roof Estimate</a>
+            <a href="#warranty-section">Why GAF &amp; Owens Corning</a>
+            <a href="#warranty-section">Real Warranty</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#services" class="nav-link">
+            Roof Repair
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#services">Roof Repair Overview</a>
+            <a href="#services">Storm Damage Restoration</a>
+            <a href="#services">Hail Damage Repair</a>
+            <a href="#consultation-form">Free Roof Estimate</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#services" class="nav-link">
+            Siding
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#services">Siding Overview</a>
+            <a href="#services">Siding Replacement Process</a>
+            <a href="#services">Fiber Cement &amp; Wood Siding</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#services" class="nav-link">
+            Commercial
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#services">Commercial Roofing Overview</a>
+            <a href="#services">TPO, Flat &amp; Low-Slope Systems</a>
+            <a href="#services">Commercial Roof Maintenance</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#services" class="nav-link">Multi-Family</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="#warranty-section" class="nav-link">Insurance Claims</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="#why-us" class="nav-link">
+            Why Us
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#why-us">Pro Project Management</a>
+            <a href="#why-us">BBB A+ &amp; RCAT Licensed</a>
+            <a href="#why-us">Good / Better / Best Options</a>
+            <a href="#our-story">Our Story</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Call & CTA Buttons -->
+      <div class="header-actions">
+        <a href="tel:8322373737" class="header-phone" data-brand-phone-link>
+          <span class="header-phone-label">Call Today</span>
+          <span class="header-phone-number" data-brand="phone">(832) 237-3737</span>
+        </a>
+        <a href="#consultation-form" class="btn btn-accent">Free Quote</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-nav-list">
+        <li><a href="#services">Roof Replacement</a></li>
+        <li><a href="#services">Roof Repair &amp; Storm Damage</a></li>
+        <li><a href="#services">HardiePlank &amp; Exterior Siding</a></li>
+        <li><a href="#services">Commercial &amp; Multi-Family Roofing</a></li>
+        <li><a href="#warranty-section">Roof Insurance Claims &amp; Warranties</a></li>
+        <li><a href="#why-us">Why Choose Us</a></li>
+        <li><a href="#reviews">Verified Reviews</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ======================================================================
+         HERO SECTION WITH EMBEDDED CONSULTATION FORM
+         ====================================================================== -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <!-- Hero Left Copy -->
+        <div>
+          <div class="hero-pill">
+            <span>Valuable Expertise. Better Results.</span>
+          </div>
+          <h1 class="hero-title">
+            Roofing For Homes, Commercial Buildings &amp; Multi-Family Properties In <span data-brand="city">Houston</span>
+          </h1>
+          <p class="hero-subtitle">
+            Roof replacement, repairs, inspections, and siding from a local <span data-brand="city">Houston</span> team that shows you what your roof actually needs, then does the work right.
+          </p>
+
+          <!-- Live Rating Badge -->
+          <div class="google-rating-badge">
+            <div class="stars" aria-label="4.9 out of 5 stars">
+              ★★★★★
+            </div>
+            <span><strong data-brand="rating">4.9</strong> · <span data-brand="reviewCount">335+</span> Google Reviews</span>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#consultation-form" class="btn btn-accent">Book Free Inspection</a>
+            <a href="tel:8322373737" class="btn btn-outline-white" data-brand-phone-link>
+              Call <span data-brand="phone">(832) 237-3737</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right Consultation Form Card -->
+        <div class="lead-card" id="consultation-form">
+          <h2 class="lead-card-title">Book Your FREE Consultation Now</h2>
+          <p class="lead-card-sub">Honest roof assessments with zero high-pressure sales games.</p>
+
+          <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+            <div class="form-grid">
+              <div>
+                <input type="text" class="form-control" placeholder="First Name *" required aria-label="First Name" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Last Name *" required aria-label="Last Name" />
+              </div>
+              <div>
+                <input type="tel" class="form-control" placeholder="Phone Number *" required aria-label="Phone Number" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email Address *" required aria-label="Email Address" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Zip Code *" required aria-label="Zip Code" />
+              </div>
+              <div>
+                <select class="form-control" required aria-label="How Did You Hear About Us?">
+                  <option value="" disabled selected>How Did You Hear? *</option>
+                  <option value="Google Search">Google Search</option>
+                  <option value="Google Ad">Google Ad</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Referral">Neighbor / Referral</option>
+                  <option value="Direct Mail">Direct Mail</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-full">
+                <textarea class="form-control" rows="3" placeholder="Tell us about your roof or project needs (Optional)" aria-label="Message"></textarea>
+              </div>
+            </div>
+
+            <p class="tcpa-disclaimer">
+              By submitting this form, you agree to receive automated texts or calls from <span data-brand="companyFull">Houston Roofing &amp; Construction</span>. Msg &amp; data rates may apply. Reply STOP to cancel. Consent is not a condition of purchase.
+            </p>
+
+            <button type="submit" class="btn btn-accent form-submit-btn" id="submitBtn">
+              Request Now →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7-BADGE ACCREDITATION & MANUFACTURER STRIP
+         ====================================================================== -->
+    <section class="trust-strip" aria-label="Certifications and Accreditations">
+      <div class="container trust-grid">
+        <div class="trust-badge">
+          <span class="trust-badge-title">BBB Accredited</span>
+          <span class="trust-badge-sub">A+ Rating Business</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-badge-title">GAF Master Elite®</span>
+          <span class="trust-badge-sub">President's Club Winner</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-badge-title">Owens Corning</span>
+          <span class="trust-badge-sub">Preferred Contractor</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-badge-title">RCAT Licensed</span>
+          <span class="trust-badge-sub">Texas Roofing Assoc.</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-badge-title">CertainTeed</span>
+          <span class="trust-badge-sub">SELECT ShingleMaster™</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-badge-title">FORTIFIED™ Roof</span>
+          <span class="trust-badge-sub">Certified Evaluator</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-badge-title">IKO Roofpro</span>
+          <span class="trust-badge-sub">Craftsman Premier</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CORE SERVICES 4-CARD ARCHITECTURAL GRID
+         ====================================================================== -->
+    <section class="section-pad" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Tailored Systems &amp; Solutions</span>
+          <h2 class="section-title">
+            Roofing &amp; Siding Services For <span data-brand="city">Houston</span> Homes, Businesses &amp; Multi-Family Properties
+          </h2>
+          <p class="section-desc">
+            Every roofing and siding project starts in a different place. Different building types. Different constraints. Different goals. So we don't force everything into one system. We build plans around what you own and what you actually need.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1: Residential Roofing -->
+          <article class="service-card">
+            <div class="service-img-wrap">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Residential roofing on a modern home" loading="lazy" decoding="async" />
+            </div>
+            <div class="service-body">
+              <h3 class="service-title">Residential Roofing</h3>
+              <p class="service-text">
+                Asphalt shingle and metal roof replacement, repair, and inspections for <span data-brand="city">Houston</span> homeowners dealing with aging roofs, storm damage, and insurance requirements.
+              </p>
+              <div class="service-links">
+                <a href="#consultation-form" class="service-link-pill">Roof Replacement →</a>
+                <a href="#consultation-form" class="service-link-pill">Roof Repair →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Commercial Roofing -->
+          <article class="service-card">
+            <div class="service-img-wrap">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Commercial flat roof TPO system" loading="lazy" decoding="async" />
+            </div>
+            <div class="service-body">
+              <h3 class="service-title">Commercial Roofing</h3>
+              <p class="service-text">
+                Flat, low-slope, and metal roofing systems, coatings, repairs, replacements, and new construction for <span data-brand="city">Houston</span> commercial properties. Built for performance, scheduling reliability, and long-term planning.
+              </p>
+              <div class="service-links">
+                <a href="#consultation-form" class="service-link-pill">Commercial Roofing →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Multi-Family Roofing -->
+          <article class="service-card">
+            <div class="service-img-wrap">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80" alt="Aerial view of multi-family apartment roofing project" loading="lazy" decoding="async" />
+            </div>
+            <div class="service-body">
+              <h3 class="service-title">Multi-Family Roofing</h3>
+              <p class="service-text">
+                Roofing for apartments, townhomes, and multi-building properties. Coordinated installs, tenant-aware execution, and scalable solutions for large properties.
+              </p>
+              <div class="service-links">
+                <a href="#consultation-form" class="service-link-pill">Multi-Family Roofing →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Siding -->
+          <article class="service-card">
+            <div class="service-img-wrap">
+              <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80" alt="Two-story home with durable fiber cement siding" loading="lazy" decoding="async" />
+            </div>
+            <div class="service-body">
+              <h3 class="service-title">Siding</h3>
+              <p class="service-text">
+                Durable fiber cement and wood siding solutions, built for long-lasting protection, curb appeal, and weather resistance against heat and Gulf storms.
+              </p>
+              <div class="service-links">
+                <a href="#consultation-form" class="service-link-pill">Siding Solutions →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         OUR STORY & MANUFACTURER-NEUTRAL GUIDANCE
+         ====================================================================== -->
+    <section class="section-pad story-section" id="our-story">
+      <div class="container story-grid">
+        <!-- Story Visual -->
+        <div class="story-image-card">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80" alt="Project management team inspecting roof" loading="lazy" decoding="async" />
+          <div class="story-image-badge">
+            <strong>20+ Years of Construction Leadership</strong>
+            <p style="font-size: 0.85rem; color: #CBD5E1; margin-top: 2px;">In-house project managers overseeing every job from inspection to final walkthrough.</p>
+          </div>
+        </div>
+
+        <!-- Story Copy -->
+        <div>
+          <span class="section-eyebrow">Our Philosophy</span>
+          <h2 class="section-title">
+            <span data-brand="companyShort">Houston Roofing</span>: Built Around The Right Roof. Not Just One Roof.
+          </h2>
+          <p style="margin-bottom: 1rem; font-weight: 600; color: var(--brand-primary);">
+            Most roofing companies stick to a limited number of roofing solutions. We don't.
+          </p>
+          <p style="margin-bottom: 1rem; color: var(--text-muted);">
+            <span data-brand="companyFull">Houston Roofing &amp; Construction</span> was founded in <span data-brand="foundedYear">2009</span> as a residential roofing company and has grown into serving residential, commercial, and multifamily properties—without changing how we approach the work.
+          </p>
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+            Our leadership team brings over 20 years of commercial construction experience, focusing on systems, coordination, and long-term performance—not shortcuts. That's why we focus on clear communication, honest recommendations, and consistent results.
+          </p>
+
+          <a href="#consultation-form" class="btn btn-primary">Our Story &amp; Standards</a>
+
+          <!-- 3 Pillars -->
+          <div class="pillars-grid">
+            <div class="pillar-box">
+              <h4>Manufacturer-Neutral</h4>
+              <p>We don't push one brand. We present options across systems so you make the right decision for your property.</p>
+            </div>
+            <div class="pillar-box">
+              <h4>Built For Local Weather</h4>
+              <p>Heat, storms, humidity, and insurance rules impact roofs here. We install systems built for how roofs actually age.</p>
+            </div>
+            <div class="pillar-box">
+              <h4>Good / Better / Best</h4>
+              <p>Every project includes tiered options based on budget, goals, and ownership timeline—never forced into one box.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3-STEP INSPECTION PROCESS BANNER
+         ====================================================================== -->
+    <section class="process-banner">
+      <div class="container" style="text-align: center;">
+        <span class="section-eyebrow" style="color: #FCA5A5;">Our Process</span>
+        <h2 class="section-title" style="color: #FFFFFF; margin-bottom: 0.5rem;">
+          No Pushing One Manufacturer Or One Solution.
+        </h2>
+        <p style="color: #CBD5E1; font-size: 1.1rem;">No one-size-fits-all answer. Just a roofing plan that fits your property.</p>
+
+        <div class="process-steps">
+          <div class="process-step-card">
+            <div class="step-number">1</div>
+            <div class="step-text">We inspect the roof thoroughly</div>
+          </div>
+          <div class="process-step-card">
+            <div class="step-number">2</div>
+            <div class="step-text">We show you photos of what we see</div>
+          </div>
+          <div class="process-step-card">
+            <div class="step-number">3</div>
+            <div class="step-text">We explain your options clearly</div>
+          </div>
+        </div>
+
+        <a href="#consultation-form" class="btn btn-accent">Book Your Free Inspection Now</a>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         WARRANTY EXPECTATIONS VS. REALITY SECTION
+         ====================================================================== -->
+    <section class="section-pad" id="warranty-section">
+      <div class="container warranty-grid">
+        <div>
+          <span class="section-eyebrow">Truth In Roofing Warranties</span>
+          <h2 class="section-title">
+            Roofing Warranties In <span data-brand="city">Houston</span>: Why The Number Isn't The Point
+          </h2>
+          <p style="color: var(--text-muted); margin-bottom: 1rem;">
+            You'll hear a lot about 30-year, 40-year, even 50-year products and warranties. Sounds impressive. But in <span data-brand="city">Houston</span>, that number usually isn't what determines a roof's lifecycle or when it needs replacement.
+          </p>
+          <p style="color: var(--text-muted);">
+            Most roofs here are replaced because of insurance requirements, age thresholds, or storm history—not because the warranty ran out.
+          </p>
+
+          <!-- Comparison Table -->
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>What You Hear</th>
+                  <th>What Actually Matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>“50-Year Warranty”</td>
+                  <td>Most roofs are replaced long before that due to weather &amp; insurance rules</td>
+                </tr>
+                <tr>
+                  <td>“Lifetime Coverage”</td>
+                  <td>Only applies if the flashing, ventilation, and install are done 100% to spec</td>
+                </tr>
+                <tr>
+                  <td>“You're Fully Protected”</td>
+                  <td>Only if the warranty is properly registered by a certified contractor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+            We offer strong manufacturer-backed warranties, including GAF Golden Pledge® options. Focus remains on getting the install right, registering every document properly, and choosing coverage that fits your ownership timeline.
+          </p>
+
+          <a href="#consultation-form" class="btn btn-outline-dark">More On Our Warranties</a>
+        </div>
+
+        <div class="story-image-card">
+          <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=900&q=80" alt="Roofer installing architectural asphalt shingles" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         01 - 06 WHY CHOOSE US GRID
+         ====================================================================== -->
+    <section class="section-pad why-section" id="why-us">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">For Roof Replacement &amp; Repair Done 100% RIGHT</span>
+          <h2 class="section-title">
+            Choose <span data-brand="companyFull">Houston Roofing &amp; Construction</span>
+          </h2>
+          <p class="section-desc">
+            When it comes to your roofing project, we believe in quality without compromise. Our proven processes, passionate professionals, and unprecedented warranties guarantee you first-class results and total peace of mind.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <!-- 01 -->
+          <div class="why-card">
+            <div class="why-num">01</div>
+            <h3 class="why-title">Real Project Managers. Real Oversight.</h3>
+            <p class="why-desc">
+              Your project isn't handed off to an unmonitored rotating crew. Our project managers are in-house employees who oversee the job from start to finish—making sure the scope is followed, the install is done right, and nothing gets missed.
+            </p>
+            <a href="#consultation-form" class="why-link">Pro Project Management →</a>
+          </div>
+
+          <!-- 02 -->
+          <div class="why-card">
+            <div class="why-num">02</div>
+            <h3 class="why-title">Built For <span data-brand="city">Houston</span>, And Still Here After The Storm</h3>
+            <p class="why-desc">
+              We're not a storm-chasing company that shows up and disappears. We're based here, we work here, and we're here after the job is done.
+            </p>
+            <ul class="why-bullets">
+              <li>Local severe weather &amp; Gulf heat patterns</li>
+              <li>Municipal building codes &amp; HOA rules</li>
+              <li>How insurance underwriting actually works</li>
+            </ul>
+            <a href="#consultation-form" class="why-link">Truly Local Accountability →</a>
+          </div>
+
+          <!-- 03 -->
+          <div class="why-card">
+            <div class="why-num">03</div>
+            <h3 class="why-title">Qualified By Choice, Not By Requirement</h3>
+            <p class="why-desc">
+              Texas doesn't require much to call yourself a roofer. We hold ourselves to a higher standard: RCAT Licensed, manufacturer-certified across multiple systems, and committed to ongoing technical training.
+            </p>
+            <a href="#consultation-form" class="why-link">RCAT Licensed Standards →</a>
+          </div>
+
+          <!-- 04 -->
+          <div class="why-card">
+            <div class="why-num">04</div>
+            <h3 class="why-title">Repair Or Replace? We'll Tell You Straight.</h3>
+            <p class="why-desc">
+              Not every roof needs to be replaced. And not every repair is worth it. We inspect the roof, show you photographic proof of what we see, and walk you through your options without pushing you in one direction.
+            </p>
+            <a href="#consultation-form" class="why-link">Honest Assessments →</a>
+          </div>
+
+          <!-- 05 -->
+          <div class="why-card">
+            <div class="why-num">05</div>
+            <h3 class="why-title">A Process That Doesn't Miss Details</h3>
+            <p class="why-desc">
+              Roofing jobs fall apart when steps get skipped. We use a structured process with multiple checkpoints—from deck inspection to magnetic nail sweep cleanup—to make sure everything is done right.
+            </p>
+            <a href="#consultation-form" class="why-link">Hassle-Free Service →</a>
+          </div>
+
+          <!-- 06 -->
+          <div class="why-card">
+            <div class="why-num">06</div>
+            <h3 class="why-title">Roofing Options For Everyone</h3>
+            <p class="why-desc">
+              We offer Good, Better, and Best roofing options based on your goals and budget. From cost-effective asphalt shingles to upgraded architectural systems and standing seam metal roofing.
+            </p>
+            <a href="#consultation-form" class="why-link">Good, Better, Best Products →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CUSTOMER REVIEWS SECTION
+         ====================================================================== -->
+    <section class="section-pad" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Verified Homeowner &amp; Commercial Feedback</span>
+          <h2 class="section-title">
+            What People Are Saying About <span data-brand="companyShort">Houston Roofing</span>
+          </h2>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="review-quote">
+                “Excellent quality materials and very professional quality work… Finished roof shingles were beautiful, and matched the color and style shown in the literature. The Project Manager listened patiently to all of my concerns and quickly addressed any issues… The neighbors are jealous!”
+              </p>
+            </div>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">John H.</span>
+              <span class="reviewer-source">Verified Google Review</span>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="review-quote">
+                “I thought I needed a roof replacement, but they checked and said all I needed was some simple maintenance and minor repairs… All the workers were very nice and friendly, they explained every step and worked with my schedule to get the job done… Especially pleased with the honesty.”
+              </p>
+            </div>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">Ronnie H.</span>
+              <span class="reviewer-source">Verified Google Review</span>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="review-quote">
+                “Excellent company from start to finish and more. The service provided by our Project Manager in the initial review, explanation of products and cost, and providing documents was transparent and without ambiguity. Very professional, neat and mindful crew.”
+              </p>
+            </div>
+            <div class="reviewer-meta">
+              <span class="reviewer-name">Egbert P.</span>
+              <span class="reviewer-source">Verified Google Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-summary-bar">
+          <div>
+            <span class="stars">★★★★★</span>
+            <strong style="margin-left: 0.5rem;"><span data-brand="rating">4.9</span> Out of 5 Stars (<span data-brand="reviewCount">335+</span> Google Reviews)</strong>
+          </div>
+          <div>
+            <strong>BBB Accredited Business · A+ Rating</strong>
+          </div>
+          <a href="#consultation-form" class="btn btn-primary">Schedule Your Free Estimate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         REAL ROOFING TOPICS (INTERACTIVE TABS)
+         ====================================================================== -->
+    <section class="section-pad blog-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Educational Resources</span>
+          <h2 class="section-title">
+            Real Roofing Topics From <span data-brand="city">Houston</span> Projects
+          </h2>
+        </div>
+
+        <div class="tabs-bar" role="tablist">
+          <button class="tab-btn active" onclick="switchTab('popular', this)">Popular Posts</button>
+          <button class="tab-btn" onclick="switchTab('financing', this)">Financing &amp; Claims</button>
+          <button class="tab-btn" onclick="switchTab('commercial', this)">Multi-Family &amp; Commercial</button>
+        </div>
+
+        <div class="articles-grid" id="articlesContainer">
+          <!-- Populated dynamically via JS for instant tab switching -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SERVICE AREAS PILL MATRIX
+         ====================================================================== -->
+    <section class="section-pad" id="service-areas">
+      <div class="container areas-grid">
+        <div>
+          <span class="section-eyebrow">Where We Work</span>
+          <h2 class="section-title"><span data-brand="city">Houston</span>'s Top Roofing Company</h2>
+          <p style="color: var(--text-muted);">
+            <span data-brand="companyFull">Houston Roofing &amp; Construction</span> proudly serves <span data-brand="city">Houston</span> and surrounding metropolitan communities with rapid response times.
+          </p>
+
+          <div class="city-pills">
+            <a href="#consultation-form" class="city-pill">Houston</a>
+            <a href="#consultation-form" class="city-pill">The Woodlands</a>
+            <a href="#consultation-form" class="city-pill">Katy</a>
+            <a href="#consultation-form" class="city-pill">Sugar Land</a>
+            <a href="#consultation-form" class="city-pill">Cypress</a>
+            <a href="#consultation-form" class="city-pill">Spring</a>
+            <a href="#consultation-form" class="city-pill">Baytown</a>
+            <a href="#consultation-form" class="city-pill">Bellaire</a>
+            <a href="#consultation-form" class="city-pill">Cinco Ranch</a>
+            <a href="#consultation-form" class="city-pill">Conroe</a>
+            <a href="#consultation-form" class="city-pill">Copperfield</a>
+            <a href="#consultation-form" class="city-pill">Energy Corridor</a>
+            <a href="#consultation-form" class="city-pill">Galleria</a>
+            <a href="#consultation-form" class="city-pill">Humble</a>
+            <a href="#consultation-form" class="city-pill">Jersey Village</a>
+            <a href="#consultation-form" class="city-pill">Kingwood</a>
+            <a href="#consultation-form" class="city-pill">Klein</a>
+            <a href="#consultation-form" class="city-pill">League City</a>
+            <a href="#consultation-form" class="city-pill">Pearland</a>
+            <a href="#consultation-form" class="city-pill">River Oaks</a>
+            <a href="#consultation-form" class="city-pill">The Heights</a>
+            <a href="#consultation-form" class="city-pill">Tomball</a>
+            <a href="#consultation-form" class="city-pill">West University</a>
+            <a href="#consultation-form" class="city-pill highlight">All Service Areas →</a>
+          </div>
+        </div>
+
+        <div class="map-card">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Need A Same-Week Roof Inspection?</h3>
+          <p style="color: #CBD5E1; font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Our local project managers are in your neighborhood daily. Get a documented photo report and transparent estimate.
+          </p>
+          <p style="font-size: 1.35rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1.25rem;" data-brand="phone">(832) 237-3737</p>
+          <a href="#consultation-form" class="btn btn-accent" style="width: 100%;">Book Free Inspection</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" id="footer-contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-heading" data-brand="companyFull">Houston Roofing &amp; Construction</h3>
+          <p style="font-size: 0.9rem; line-height: 1.65; margin-bottom: 1.25rem;">
+            A local team providing residential, commercial, and multifamily roofing and siding services across the <span data-brand="city">Houston</span> area. With 20+ years in commercial construction, we focus on system performance, clear communication, and doing the work the right way from start to finish.
+          </p>
+          <p style="font-size: 0.82rem; color: #94A3B8;" data-brand="license">RCAT Residential Roofing License #01-0476 E</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Roof Replacement</a></li>
+            <li><a href="#services">Roof Repair &amp; Storm Damage</a></li>
+            <li><a href="#services">Commercial Roofing</a></li>
+            <li><a href="#warranty-section">Roof Insurance Claims</a></li>
+            <li><a href="#why-us">Why Us &amp; Our Process</a></li>
+            <li><a href="#reviews">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Office &amp; Hours</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+            <strong style="color: #FFFFFF;">Address:</strong><br/>
+            <span data-brand="address">11330 West Rd, Houston, TX 77065</span>
+          </p>
+          <p style="font-size: 0.9rem;">
+            <strong style="color: #FFFFFF;">Office Hours:</strong><br/>
+            <span data-brand="hours">Mon–Sun: 7am–8pm</span>
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <p style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.4rem;">
+            <a href="tel:8322373737" data-brand-phone-link data-brand="phone">(832) 237-3737</a>
+          </p>
+          <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">
+            <a href="mailto:info@myhrc.biz" data-brand="email">info@myhrc.biz</a>
+          </p>
+          <a href="#consultation-form" class="btn btn-accent" style="width: 100%;">Get Free Quote</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="currentYear">2026</span> <span data-brand="companyFull">Houston Roofing &amp; Construction</span>. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Careers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Bottom Bar -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:8322373737" class="btn btn-primary" data-brand-phone-link style="padding: 0.7rem;">
+      Call Now
+    </a>
+    <a href="#consultation-form" class="btn btn-accent" style="padding: 0.7rem;">
+      Free Quote
+    </a>
+  </div>
+
+  <!-- ========================================================================
+       WHITE-LABEL REBRANDING & INTERACTION SCRIPT
+       ======================================================================== -->
+  <script>
+    /**
+     * 1. CENTRALIZED REBRAND CONFIGURATION
+     * Edit these defaults OR pass URL parameters when sending prospects a preview link:
+     * Example: ?company=Lone+Star+Roofing&city=Austin&phone=(512)+555-0199&accent=%23D97706
+     */
+    const BRAND_CONFIG = {
+      companyShort: "Houston Roofing",
+      companySub: "& Construction",
+      companyFull: "Houston Roofing & Construction",
+      city: "Houston",
+      phone: "(832) 237-3737",
+      email: "info@myhrc.biz",
+      address: "11330 West Rd, Houston, TX 77065",
+      hours: "Mon–Sun: 7am–8pm",
+      foundedYear: "2009",
+      license: "RCAT Licensed #01-0476 E",
+      rating: "4.9",
+      reviewCount: "335+"
+    };
+
+    // Apply URL parameter overrides automatically for cold outreach personalization
+    function applyBrandConfig() {
+      const params = new URLSearchParams(window.location.search);
+
+      if (params.get('company')) {
+        BRAND_CONFIG.companyShort = params.get('company');
+        BRAND_CONFIG.companyFull = params.get('company');
+        BRAND_CONFIG.companySub = params.get('sub') || "Roofing & Exteriors";
+      }
+      if (params.get('city')) BRAND_CONFIG.city = params.get('city');
+      if (params.get('phone')) BRAND_CONFIG.phone = params.get('phone');
+      if (params.get('email')) BRAND_CONFIG.email = params.get('email');
+      if (params.get('address')) BRAND_CONFIG.address = params.get('address');
+      if (params.get('rating')) BRAND_CONFIG.rating = params.get('rating');
+      if (params.get('reviews')) BRAND_CONFIG.reviewCount = params.get('reviews');
+
+      // Optional dynamic color overrides via URL (?primary=%231E293B&accent=%23EA580C)
+      if (params.get('primary')) {
+        document.documentElement.style.setProperty('--brand-primary', params.get('primary'));
+      }
+      if (params.get('accent')) {
+        document.documentElement.style.setProperty('--brand-accent', params.get('accent'));
+      }
+
+      // Inject text into all [data-brand] elements
+      document.querySelectorAll('[data-brand]').forEach(el => {
+        const key = el.getAttribute('data-brand');
+        if (BRAND_CONFIG[key]) el.textContent = BRAND_CONFIG[key];
+      });
+
+      // Update tel: links
+      const cleanPhone = BRAND_CONFIG.phone.replace(/[^0-9+]/g, '');
+      document.querySelectorAll('[data-brand-phone-link]').forEach(el => {
+        el.setAttribute('href', `tel:${cleanPhone}`);
+      });
+
+      // Update Page Title
+      document.title = `${BRAND_CONFIG.companyFull} | Expert Roof Replacement & Repairs in ${BRAND_CONFIG.city}`;
+    }
+
+    // 2. TABBED ARTICLES DATA (Matches houstonroofingonline.com topics)
+    const ARTICLES_DATA = {
+      popular: [
+        {
+          title: "Repairs We OFTEN Have To Make",
+          excerpt: "Sometimes we go out to inspect a repair issue and find shortcuts left behind by low-bid contractors. Here is what we look for around flashing and valleys…",
+          img: "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          title: "10 Tips To Help You Find The Best Roofing Contractor",
+          excerpt: "Don't tolerate high-pressure sales tactics from a roofing contractor. If a sales rep pressures you to sign right away or switches prices, walk away…",
+          img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          title: "6 Reasons To Make Roof Repairs Before The Next Storm",
+          excerpt: "Your property value and insurance eligibility suffer if minor roof leaks aren't documented and repaired before severe seasonal weather arrives…",
+          img: "https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      financing: [
+        {
+          title: "Roof Replacement: How Financing Protects Your Cash Flow",
+          excerpt: "Full roof replacement often runs near $15,000–$25,000 upfront. Flexible monthly payment plans let you keep cash reserves untouched for emergencies…",
+          img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          title: "Residential Roof Repairs: Covering The Unexpected",
+          excerpt: "Unexpected storm or flashing repairs shouldn't drain your family savings. We inspect first, document the scope, and provide clear payment options…",
+          img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          title: "Roofing Contractor Or General Contractor? How To Tell",
+          excerpt: "A dedicated roofing contractor lives on roofs daily with certified crews; a generalist coordinates multiple trades. Here is why specialization matters…",
+          img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      commercial: [
+        {
+          title: "What Makes The Best Multi-Family Roofing Contractors?",
+          excerpt: "Our certifications across multiple manufacturers provide access to enhanced material and workmanship warranties across all apartment & HOA units…",
+          img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          title: "5 Things To Think About With Multi-Family Roofing",
+          excerpt: "We know a property manager's challenges well: tenant safety, daily cleanup, parking coordination, and zero-disruption scheduling…",
+          img: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          title: "Our Culture BRINGS OUT Our Best On Every Jobsite",
+          excerpt: "We promote accountability between our in-house project managers so every residential and commercial roof passes a strict multi-point inspection…",
+          img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80"
+        }
+      ]
+    };
+
+    function switchTab(category, btnEl) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+
+      const container = document.getElementById('articlesContainer');
+      const items = ARTICLES_DATA[category] || ARTICLES_DATA.popular;
+
+      container.innerHTML = items.map(item => `
+        <article class="article-card">
+          <img src="${item.img}" alt="${item.title}" class="article-img" loading="lazy" decoding="async" />
+          <div class="article-body">
+            <h3 class="article-title">${item.title}</h3>
+            <p class="article-excerpt">${item.excerpt}</p>
+            <a href="#consultation-form" class="why-link">Read the article →</a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // 3. MOBILE MENU & FORM SUBMISSION HANDLER
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileDrawer').classList.toggle('open');
+    });
+
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = "✓ Inspection Request Received! We'll Call Shortly.";
+      btn.style.backgroundColor = "#15803D";
+      e.target.reset();
+    }
+
+    // Initialize on load
+    applyBrandConfig();
+    switchTab('popular');
+  </script>
+</body>
+</html>
